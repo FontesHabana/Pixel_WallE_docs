@@ -1,0 +1,489 @@
+/* --- Variables CSS para Temas --- */
+:root {
+    /* Colores por defecto (Modo Oscuro) */
+    --primary-bg: #1e1e2d; /* Fondo principal */
+    --secondary-bg: #282c34; /* Fondo secundario (header, footer, items) */
+    --primary-text: #f8f8f2; /* Color de texto principal */
+    --secondary-text: #bbb; /* Color de texto secundario/opaco */
+    --accent-color: #61dafb; /* Color de acento */
+    --button-bg: #007bff; /* Fondo de botón principal */
+    --button-text: #fff; /* Texto de botón principal */
+    --border-color: #444; /* Color de borde sutil */
+    --card-shadow: 0 2px 8px rgba(0, 0, 0, 0.5); /* Sombra más oscura */
+    --hero-gradient-start: #1e1e2d;
+    --hero-gradient-end: #2a2a3a;
+    --mobile-menu-bg: #282c34; /* Fondo del menú móvil */
+    --mobile-menu-border: rgba(255, 255, 255, 0.1);
+}
+
+/* Variables para Modo Claro (Mejorada) */
+html[data-theme='light'] {
+    --primary-bg: #edf2f7; /* Fondo principal suave */
+    --secondary-bg: #e9ecef; /* Fondo secundario (header, footer, items) */
+    --primary-text: #212529; /* Texto oscuro */
+    --secondary-text: #495057; /* Texto grisáceo */
+    --accent-color: #007bff; /* Azul de acento */
+    --button-bg: #007bff;
+    --button-text: #fff;
+    --border-color: #ced4da; /* Borde gris claro */
+    --card-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Sombra más clara */
+    --hero-gradient-start: #007bff;
+    --hero-gradient-end: #00c6ff;
+    --mobile-menu-bg: #e9ecef;
+    --mobile-menu-border: rgba(0, 0, 0, 0.1);
+}
+
+
+/* --- Reset y Configuración General --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: var(--primary-bg);
+    color: var(--primary-text);
+    overflow-x: hidden;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    overflow: hidden;
+}
+
+section {
+    padding: 4rem 0;
+    transition: background-color 0.3s ease;
+}
+
+h1, h2, h3 {
+    color: var(--primary-text);
+    transition: color 0.3s ease;
+}
+
+/* --- Encabezado (Header) --- */
+header {
+    background: var(--secondary-bg);
+    color: var(--primary-text);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Centra verticalmente todos los items en el header */
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--accent-color);
+    /* En escritorio, el logo puede tener un margen para separar un poco */
+    margin-right: 30px; /* Ajusta según necesites */
+}
+
+nav {
+    display: flex;
+    align-items: center; /* Centra verticalmente los elementos dentro de nav */
+}
+
+nav ul {
+    list-style: none;
+    display: flex; /* Por defecto, mostrar en línea */
+    align-items: center; /* Alinear items del nav verticalmente */
+    padding: 0; /* Reset padding */
+    margin: 0; /* Reset margin */
+    transition: transform 0.3s ease-in-out;
+}
+
+nav ul li {
+    margin-left: 25px;
+}
+
+nav a {
+    color: var(--primary-text);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+    font-size: 1rem;
+    display: block; /* Asegura que el padding funcione bien */
+    padding: 5px 0; /* Pequeño padding vertical para el área de click */
+}
+
+nav a:hover {
+    color: var(--accent-color);
+}
+
+/* Botón Hamburguesa y Iconos de Utilidad */
+.menu-toggle-button {
+    display: none; /* Ocultar por defecto en escritorio */
+    background: none;
+    border: none;
+    color: var(--primary-text);
+    font-size: 1.5rem; /* Icono un poco más grande */
+    cursor: pointer;
+    padding: 0 10px; /* Espacio alrededor del icono */
+    transition: color 0.3s ease;
+}
+
+.menu-toggle-button:hover {
+     color: var(--accent-color);
+}
+
+.utility-icons {
+    display: flex; /* Pone los iconos de utilidad en línea */
+    align-items: center; /* Centra verticalmente los iconos */
+    margin-left: 20px; /* Espacio entre nav links y iconos */
+}
+
+.header-icon {
+    background: none;
+    border: none;
+    color: var(--primary-text);
+    font-size: 1.2rem; /* Tamaño estándar para iconos */
+    cursor: pointer;
+    margin-left: 15px; /* Espacio entre iconos */
+    padding: 5px;
+    transition: color 0.3s ease;
+    text-decoration: none; /* Asegura que los enlaces no tengan subrayado */
+}
+
+.header-icon:hover {
+    color: var(--accent-color);
+}
+
+/* --- Sección Principal (Hero) --- */
+.hero {
+    background: linear-gradient(to right, var(--hero-gradient-start), var(--hero-gradient-end));
+    color: var(--button-text);
+    padding: 6rem 0;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0) 70%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.hero .container {
+    position: relative;
+    z-index: 2;
+}
+
+.hero h1 {
+    margin-bottom: 1rem;
+    font-size: 3rem;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+    color: #fff;
+}
+
+.hero p {
+    margin-bottom: 2.5rem;
+    font-size: 1.3rem;
+    opacity: 0.95;
+    color: #e0e0e0;
+}
+
+.btn-download {
+    display: inline-block;
+    background: var(--button-bg);
+    color: var(--button-text);
+    padding: 1rem 2.5rem;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: background 0.3s ease, transform 0.1s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.btn-download i {
+    margin-right: 10px;
+}
+
+.btn-download:hover {
+    background: var(--accent-color);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+     html[data-theme='light'] & {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+     }
+}
+
+.btn-download:active {
+    transform: scale(0.98);
+}
+
+/* --- Sección de Características (Features) --- */
+.features {
+    background: var(--primary-bg);
+}
+
+.features h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.feature-item {
+    background: var(--secondary-bg);
+    color: var(--secondary-text);
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: var(--card-shadow);
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid var(--border-color);
+}
+
+.feature-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+     html[data-theme='light'] & {
+         box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+     }
+}
+
+.feature-item i {
+    font-size: 3rem;
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+    transition: color 0.3s ease;
+}
+
+.feature-item h3 {
+    margin-bottom: 1rem;
+    color: var(--primary-text);
+    font-size: 1.3rem;
+    transition: color 0.3s ease;
+}
+
+.feature-item p {
+    font-size: 1rem;
+    color: var(--secondary-text);
+    transition: color 0.3s ease;
+}
+
+/* --- Sección de Captura de Pantalla (Screenshot) --- */
+.screenshot {
+    background: var(--secondary-bg);
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.screenshot h2 {
+    margin-bottom: 1rem;
+    font-size: 2.5rem;
+}
+.screenshot p {
+     margin-bottom: 2rem;
+     font-size: 1.1rem;
+     color: var(--secondary-text);
+     transition: color 0.3s ease;
+}
+
+.screenshot img {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    box-shadow: var(--card-shadow);
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+/* --- Pie de Página (Footer) --- */
+footer {
+    background: var(--secondary-bg);
+    color: var(--secondary-text);
+    text-align: center;
+    padding: 2rem 0;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+footer p {
+    margin-bottom: 0.8rem;
+}
+
+footer p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* --- Responsividad --- */
+
+/* Tablet y Móvil (ej: 768px y menos) */
+@media (max-width: 768px) {
+    header .container {
+        /* Permite que el logo y la nav se distribuyan */
+        justify-content: space-between;
+    }
+
+    .logo {
+        margin-right: 0; /* Elimina el margen del logo en móvil */
+    }
+
+    nav {
+         /* En móvil, nav contiene el toggle y los iconos de utilidad */
+         flex-grow: 1; /* Permite que nav ocupe espacio */
+         justify-content: flex-end; /* Alinea el contenido de nav a la derecha */
+    }
+
+     /* Mostrar el botón de hamburguesa en móvil */
+    .menu-toggle-button {
+        display: block;
+        order: 1; /* Ordena el botón después de los iconos */
+    }
+
+    .utility-icons {
+         margin-left: 0; /* Elimina margen izquierdo en móvil */
+         order: 2; /* Ordena los iconos antes del botón */
+    }
+
+     .header-icon {
+         font-size: 1.4rem; /* Iconos un poco más grandes en móvil */
+     }
+
+     /* Ocultar los enlaces de navegación por defecto en móvil */
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: var(--mobile-menu-bg); /* Fondo para el menú desplegable */
+        position: absolute;
+        top: 100%; /* Debajo del header */
+        left: 0;
+        width: 100%;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        border-top: 1px solid var(--mobile-menu-border);
+        padding: 1rem 0;
+        z-index: 999; /* Por debajo del header pero por encima del contenido */
+    }
+
+    .nav-links.active {
+        display: flex; /* Mostrar cuando tenga la clase active */
+    }
+
+    .nav-links li {
+        margin: 0; /* Elimina margen horizontal */
+        text-align: center;
+    }
+
+    .nav-links a {
+        padding: 10px 0; /* Más padding vertical para cada enlace */
+        width: 100%; /* Asegura que ocupe todo el ancho del menú */
+    }
+
+
+    .hero {
+        padding: 5rem 0;
+        min-height: 70vh;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1.1rem;
+    }
+
+    .btn-download {
+        padding: 0.9rem 2.2rem;
+        font-size: 1.1rem;
+    }
+
+    section {
+        padding: 3rem 0;
+    }
+
+     .features h2, .screenshot h2 {
+         font-size: 2rem;
+         margin-bottom: 2rem;
+     }
+
+     .feature-grid {
+         gap: 20px;
+         grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+     }
+
+     .feature-item {
+         padding: 1.5rem;
+     }
+
+     .feature-item i {
+         font-size: 2.5rem;
+     }
+}
+
+/* Móvil pequeño (ej: 480px y menos) */
+@media (max-width: 480px) {
+     .hero {
+        padding: 4rem 0;
+        min-height: 60vh;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .btn-download {
+        padding: 0.8rem 1.8rem;
+        font-size: 1rem;
+    }
+
+    section {
+        padding: 2rem 0;
+    }
+
+    .features h2, .screenshot h2 {
+         font-size: 1.8rem;
+         margin-bottom: 1.5rem;
+     }
+
+     .feature-grid {
+         grid-template-columns: 1fr;
+         gap: 15px;
+     }
+
+     .feature-item {
+         padding: 1.2rem;
+     }
+
+    footer {
+        padding: 1.5rem 0;
+        font-size: 0.8rem;
+    }
+}

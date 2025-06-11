@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark"> <!-- Por defecto en modo oscuro -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pixelWallE Editor - Codifica Arte Pixel a Pixel</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Enlace a Font Awesome para iconos (versión más reciente si es posible) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Puedes enlazar fuentes externas aquí si lo deseas -->
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet"> -->
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <div class="logo">pixelWallE</div>
+            <nav>
+                 <!-- Botón Hamburguesa (visible solo en móvil/tablet) -->
+                <button id="mobile-menu-toggle" class="menu-toggle-button" aria-label="Toggle mobile menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+                 <!-- Iconos de utilidad (visibles en todas partes, pero movidos en móvil) -->
+                <div class="utility-icons">
+                    <a href="URL_GITHUB" target="_blank" class="header-icon" aria-label="Ir a GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <button id="theme-toggle" class="header-icon theme-toggle-button" aria-label="Toggle theme">
+                        <i class="fas fa-sun"></i> <!-- Icono de sol por defecto -->
+                    </button>
+                </div>
+                <!-- Enlaces de navegación (ocultos en móvil, mostrados en el menú) -->
+                <ul class="nav-links">
+                    <li><a href="#features">Características</a></li>
+                    <li><a href="#screenshot">En Acción</a></li>
+                    <!-- Enlace a la documentación del editor -->
+                    <li><a href="URL_DE_TU_DOCUMENTACION_EDITOR" target="_blank">Documentación</a></li>
+                    <!-- Enlace a la documentación del lenguaje PixelWallE -->
+                    <li><a href="URL_DE_LA_DOCUMENTACION_PIXELWALLE" target="_blank">Docs Lenguaje</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>Da Vida a tu Arte Pixel con Código</h1>
+                <p>El editor pixelWallE te permite crear arte pixel a pixel utilizando un lenguaje de programación simple y potente.</p>
+                <a href="URL_DE_TU_ARCHIVO_DE_DESCARGA" class="btn-download">
+                    <i class="fas fa-download"></i> Descargar pixelWallE
+                </a>
+            </div>
+        </section>
+
+        <section id="features" class="features">
+            <div class="container">
+                <h2>Características Clave</h2>
+                <div class="feature-grid">
+                    <div class="feature-item">
+                        <i class="fas fa-code"></i>
+                        <h3>Sintaxis pixelWallE</h3>
+                        <p>Resaltado de sintaxis intuitivo para nuestro lenguaje de dibujo pixel a pixel.</p>
+                    </div>
+                    <div class="feature-item">
+                         <i class="fas fa-palette"></i>
+                        <h3>Soporte Amplio de Color</h3>
+                        <p>Utiliza colores en formato Hexadecimal y RGB para una creatividad sin límites.</p>
+                    </div>
+                     <div class="feature-item">
+                         <i class="fas fa-terminal"></i>
+                        <h3>Consola Integrada</h3>
+                        <p>Visualiza la salida de tu código, errores y mensajes de compilación al instante.</p>
+                    </div>
+                    <div class="feature-item">
+                         <i class="fas fa-camera"></i>
+                        <h3>Foto a Código</h3>
+                        <p>Automatiza la creación de código pixelWallE convirtiendo tus imágenes favoritas.</p>
+                    </div>
+                    <div class="feature-item">
+                         <i class="fas fa-play-circle"></i>
+                        <h3>Previsualización en Vivo</h3>
+                        <p>Observa tu arte pixel renderizado en tiempo real mientras codificas.</p>
+                    </div>
+                     <div class="feature-item">
+                         <i class="fas fa-puzzle-piece"></i>
+                        <h3>Extensible (Futuro)</h3>
+                        <p>Planeamos un sistema de extensiones para añadir más herramientas y funcionalidades.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Captura de Pantalla -->
+        <!-- ESTE ES EL LUGAR PRINCIPAL PARA MOSTRAR IMÁGENES GRANDES DEL EDITOR -->
+        <section id="screenshot" class="screenshot">
+            <div class="container">
+                <h2>Mira pixelWallE en Acción</h2>
+                <p>Una vista del editor con código pixelWallE y la previsualización de arte.</p>
+                <!-- Reemplaza 'images/screenshot_editor.png' con la ruta a tu imagen real -->
+                <img src="images/screenshot_editor.png" alt="Captura de pantalla del editor pixelWallE mostrando código y arte pixel de Wall-E">
+            </div>
+        </section>
+
+        <!-- Puedes añadir otras secciones y usar imágenes pequeñas o iconos -->
+        <!-- Por ejemplo, en una sección "Cómo funciona" podrías usar diagramas o iconos -->
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2023 pixelWallE. Todos los derechos reservados.</p>
+            <p>Desarrollado por [Tu Nombre o Nombre del Equipo Desarrollador].</p>
+            <!-- Puedes añadir más info o enlaces aquí -->
+        </div>
+    </footer>
+
+    <script src="script.js"></script> <!-- Enlaza tu archivo JavaScript -->
+
+</body>
+</html>
