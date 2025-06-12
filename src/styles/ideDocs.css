@@ -1,0 +1,499 @@
+html{
+    
+   
+}
+a{
+    color: inherit;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+section{
+    padding-bottom: 1rem;
+}
+.docs-container {
+    scroll-behavior: smooth;
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    max-width: 100vw;
+    overflow-y: auto;
+    gap: 30px; /* Espacio entre la barra lateral y el contenido */
+    padding-top: 2rem; /* Un poco de espacio arriba del contenido de la docs */
+    padding-bottom: 2rem; /* Un poco de espacio abajo */
+    margin: 1.4vw;
+    overflow: hidden;    
+    scrollbar-width: none;
+}
+
+
+aside{
+   
+    top: 0;
+    width: 250px;
+    overflow-y: auto;
+    flex-shrink: 0;
+    height: 50px;
+  
+}
+
+.docs-sidebar {
+    
+    position: sticky;
+    top: 0;
+    align-self: flex-start;
+    flex: 0 0 250px;
+     height: 90vh;
+    background-color: var(--secondary-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-top: 30px;
+    box-shadow: var(--card-shadow);
+    transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    overflow-y: auto; /* Keep this */
+    /* MODIFY this line to make it taller */
+    
+    
+    /* Keep the rest of the rules in this block */
+}
+
+
+
+.docs-sidebar::-webkit-scrollbar {
+    width: 8px;  /* Adjust width for better visibility, or 0px to hide completely */
+}
+
+/* Target the scrollbar track background */
+.docs-sidebar::-webkit-scrollbar-track {
+    background: transparent; /* Make the track transparent */
+}
+
+/* Target the scrollbar thumb (the draggable part) */
+.docs-sidebar::-webkit-scrollbar-thumb {
+    background-color: rgba(150, 150, 150, 0.3); /* Subtle, semi-transparent grey */
+    border-radius: 4px; /* Rounded corners for the thumb */
+    border: none; /* No border around the thumb */
+}
+
+/* Style for the thumb when hovered (optional: makes it slightly more visible) */
+.docs-sidebar::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(150, 150, 150, 0.5); /* Slightly less transparent on hover */
+}
+
+/* --- Scrollbar Styling for .docs-sidebar (Firefox) --- */
+/* Standard property for scrollbar width */
+.docs-sidebar {
+  scrollbar-width: thin; /* "auto", "thin", or "none" */
+  /* Standard property for thumb and track color */
+  scrollbar-color: rgba(150, 150, 150, 0.3) transparent; /* thumb color, track color */
+}
+
+.docs-sidebar nav h3 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    color: var(--primary-text); /* El título de la sección de la sidebar */
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.5rem;
+}
+
+aside ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: initial;
+    
+
+}
+/* Style for nested lists (sub-sections) */
+
+
+.docs-sidebar ul li {
+    margin-bottom: 0.5rem;
+}
+
+.docs-sidebar ul li a {
+    text-decoration: none;
+    color: var(--primary-text); /* Color del texto del enlace normal: ahora el mismo que el texto principal */
+    font-weight: bold; /* Los enlaces ahora son negritas */
+    transition: color 0.3s ease;
+    display: block; /* Hace que toda el área del li sea clickeable */
+    padding: 3px 0;
+    font-size: 1rem;
+}
+/* Adjust font size for nested list links */
+.docs-sidebar ul ul li a {
+    font-size: 0.95rem;
+    font-weight: normal; /* Sub-section links can be less bold */
+    color: var(--secondary-text); /* Use secondary color for sub-section links */
+}
+
+/* Hover for nested list links */
+.docs-sidebar ul ul li a:hover {
+     color: var(--accent-color);
+     text-decoration: underline;
+}
+
+
+article{
+    flex: 1;
+    overflow-y: auto; 
+        scroll-behavior: smooth;
+        scrollbar-width: none;
+}
+.docs-content {
+    flex-grow: 1; /* Permite que ocupe el espacio restante */
+    min-width: 0; /* Permite que el contenido se encoja si es necesario */
+   
+}
+
+.docs-content section {
+    margin-bottom: 3rem; /* Espacio entre secciones */
+    padding-top: 1rem; /* Espacio superior si se salta con enlaces ancla */
+}
+
+
+.docs-content h1 {
+    margin-bottom: 1.5rem;
+    font-size: 2.5rem;
+    color: var(--primary-text); /* Asegura que los títulos sean del color principal */
+}
+
+.docs-content h2 {
+    margin-top: 2rem; /* Espacio antes del h2 de sección */
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.5rem;
+    color: var(--primary-text);
+}
+
+.docs-content h3 {
+    margin-top: 1.5rem; /* Espacio antes del h3 */
+    margin-bottom: 0.8rem;
+    font-size: 1.3rem;
+    color: var(--primary-text);
+}
+
+.docs-content p {
+    margin-bottom: 1rem;
+    color: var(--primary-text); /* Usar texto principal para contenido general */
+    line-height: 1.7;
+}
+
+.docs-content ul,
+.docs-content ol {
+    margin-bottom: 1rem;
+    margin-left: 1.5rem;
+    color: var(--primary-text);
+}
+
+.docs-content ul li {
+    margin-bottom: 0.5rem;
+}
+
+.docs-content ol li {
+    margin-bottom: 0.5rem;
+}
+
+
+.docs-content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1.5rem;
+    box-shadow: var(--card-shadow);
+    overflow: hidden; /* Para que el border-radius en thead funcione */
+    border-radius: 8px;
+}
+
+.docs-content th,
+.docs-content td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+    color: var(--primary-text);
+}
+
+.docs-content th {
+    background-color: var(--secondary-bg); /* Fondo para la cabecera */
+    font-weight: bold;
+    color: var(--primary-text); /* Color texto cabecera */
+}
+
+/* Estilo para la primera fila de la tabla */
+.docs-content tr:nth-child(even) {
+    background-color: var(--primary-bg); /* Fondo alternado para filas */
+}
+.docs-content tr:nth-child(odd) {
+    background-color: var(--secondary-bg); /* Fondo alternado para filas */
+}
+
+/* Estilo para la cabecera de la tabla (thead) */
+.docs-content thead tr {
+    background-color: var(--accent-color); /* Color de fondo para la cabecera */
+    color: var(--button-text); /* Texto blanco o claro en la cabecera */
+}
+.docs-content thead th {
+    color: var(--button-text); /* Asegura el color del texto en th dentro de thead */
+    border-bottom: none; /* Elimina el borde inferior en la cabecera */
+}
+
+
+/* Estilo para bloques de código */
+.docs-content pre {
+    background-color: var(--secondary-bg);
+    border: 1px solid var(--border-color);
+    border-left: 4px solid var(--accent-color); /* Borde de acento a la izquierda */
+    border-radius: 5px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    overflow-x: auto; /* Permite desplazamiento horizontal si el código es muy largo */
+    font-family: 'Roboto Mono', Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace; /* Fuente monoespaciada */
+    font-size: 0.9rem;
+    word-wrap: break-word; /* Break long lines */
+    white-space: pre-wrap; /* Preserve whitespace but wrap */
+}
+.docs-content pre code {
+    display: block; /* Needed for word-wrap/white-space on pre */
+}
+
+.docs-content code {
+    background-color: transparent; /* El fondo ya lo da el pre */
+    color: var(--primary-text); /* Color del texto del código */
+    font-family: inherit; /* Hereda la fuente del pre */
+    font-size: inherit; /* Hereda el tamaño de fuente del pre */
+    padding: 0; /* Elimina padding interno si existe */
+}
+
+/* Estilo para código inline */
+.docs-content p code,
+.docs-content li code,
+.docs-content th code,
+.docs-content td code {
+     background-color: rgba(100, 100, 100, 0.1); /* Fondo ligero */
+     border-radius: 3px;
+     padding: 2px 5px;
+     font-size: 0.9em; /* Ligeramente más pequeño que el texto circundante */
+     color: var(--accent-color); /* Color de acento para código inline */
+     white-space: nowrap; /* Evita saltos de línea en código inline corto */
+}
+
+/* Styles for nested list items like in Expressions section */
+.docs-content section ul li ul li {
+    margin-top: 0.3rem;
+    margin-bottom: 0.3rem;
+}
+
+
+/* Estilos para las sugerencias de captura de pantalla */
+.docs-content p:contains('SUGERIR CAPTURA DE PANTALLA:') {
+    font-style: italic;
+    color: var(--secondary-text);
+    margin-top: 1.5rem;
+    border-left: 3px solid var(--border-color);
+    padding-left: 1rem;
+}
+
+/* --- Responsividad de Documentación --- */
+
+/* Tablet y Móvil (ej: 768px y menos) */
+@media (max-width: 768px) {
+    .docs-container {
+        flex-direction: column; /* Apila la barra lateral y el contenido */
+        gap: 20px; /* Reduce el espacio entre ellos */
+        padding-top: 1.5rem;
+        padding-bottom: 1.5rem;
+        margin: 2vw;
+    }
+
+    aside{
+        position:relative; /* Sidebar is no longer fixed */
+        width: 100%; /* Take full width */
+        height: auto; /* Height based on content */
+        max-height: none; /* Remove max height constraint */
+        flex-direction: row; /* This flex is on aside, sidebar is inside */
+       
+    }
+    .docs-sidebar {
+        flex: none; /* Elimina la base fija */
+        width: 100%; /* Ocupa todo el ancho */
+        order: 2; /* Mueve la barra lateral DESPUÉS del contenido principal */
+        padding: 0;
+        align-items: center;
+        overflow-y: visible; /* No scroll in mobile */
+         border: 0;
+    }
+
+    .docs-sidebar nav h3 {
+        margin-bottom: 0.8rem;
+        padding-bottom: 0.3rem;
+    }
+
+    .docs-sidebar ul {
+         display: flex; /* Convierte la lista en un flex container */
+         flex-wrap: wrap; /* Permite que los elementos se envuelvan en múltiples filas */
+         flex-direction: row;
+         gap: 15px; /* Espacio entre elementos horizontales y verticales */
+         margin-bottom: 1rem;
+         align-items: center;
+         align-content: center;
+         margin-left: 0; /* Remove left margin */
+         padding: 1rem;
+         border-radius: 20px;
+    }
+    .docs-sidebar ul ul { /* Nested lists in mobile horizontal layout */
+        margin-left: 0; /* Remove indentation */
+        border-left: none; /* Remove border */
+        padding-left: 0;
+        width: 100%; /* Ensure nested list takes full width to stack */
+    }
+
+
+     .docs-sidebar ul li {
+         margin-bottom: 0; /* Elimina el margen inferior individual de los ítems */
+         flex-shrink: 0; /* Don't shrink list items */
+     }
+
+     .docs-sidebar ul ul li {
+         width: 100%; /* Ensure nested list items stack vertically */
+     }
+
+     .docs-sidebar ul li a {
+         padding: 5px 10px; /* Aumenta el padding para que sean más fáciles de tocar */
+         font-size: 0.95rem;
+         background-color: var(--tertiary-bg); /* Fondo para cada botón */
+         text-align: center;
+         border-radius: 5px; /* Add border radius for button look */
+         font-weight: normal; /* Make all sidebar links normal weight in mobile */
+     }
+      .docs-sidebar ul ul li a {
+         font-size: 0.95rem; /* Keep same size as parent in mobile */
+         color: var(--primary-text); /* Use primary text color */
+     }
+
+
+    .docs-content {
+        margin-left: 0; /* Remove left margin */
+        order: 1; /* Mueve el contenido principal ANTES de la barra lateral */
+        padding-top: 0; /* Elimina padding superior si el primer h2 ya da espacio */
+    }
+
+    .docs-content section {
+        margin-bottom: 2rem; /* Reduce espacio entre secciones */
+         padding-top: 0.5rem;
+    }
+
+    .docs-content h1 {
+         font-size: 2rem;
+         margin-bottom: 1rem;
+    }
+
+     .docs-content h2 {
+         font-size: 1.8rem;
+         margin-top: 1.5rem;
+         margin-bottom: 0.8rem;
+     }
+
+     .docs-content h3 {
+         font-size: 1.2rem;
+         margin-top: 1rem;
+         margin-bottom: 0.5rem;
+     }
+
+    .docs-content th,
+    .docs-content td {
+        padding: 10px; /* Reduce padding en celdas de tabla */
+         font-size: 0.9rem;
+    }
+
+     .docs-content pre {
+         padding: 0.8rem;
+         font-size: 0.85rem;
+     }
+
+      .docs-content p code,
+      .docs-content li code,
+      .docs-content th code,
+      .docs-content td code {
+           padding: 1px 4px;
+           font-size: 0.85em;
+      }
+}
+
+/* Móvil pequeño (ej: 480px y menos) */
+@media (max-width: 480px) {
+    .docs-container {
+        gap: 15px; /* Reduce espacio */
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+
+     .docs-sidebar {
+         padding: 0.8rem;
+     }
+
+      .docs-sidebar nav h3 {
+        font-size: 1rem;
+        margin-bottom: 0.6rem;
+        padding-bottom: 0.2rem;
+      }
+
+      .docs-sidebar ul {
+          gap: 10px; /* Reduce el espacio entre elementos en móviles pequeños */
+          margin-bottom: 0.8rem;
+      }
+
+       .docs-sidebar ul li a {
+           font-size: 0.9rem;
+           padding: 3px 8px; /* Ajusta el padding para botones más pequeños */
+       }
+
+
+    .docs-content section {
+        margin-bottom: 1.5rem;
+         padding-top: 0.3rem;
+    }
+
+    .docs-content h1 {
+         font-size: 1.8rem;
+         margin-bottom: 0.8rem;
+    }
+
+     .docs-content h2 {
+         font-size: 1.6rem;
+         margin-top: 1rem;
+         margin-bottom: 0.6rem;
+     }
+
+     .docs-content h3 {
+         font-size: 1.1rem;
+         margin-top: 0.8rem;
+         margin-bottom: 0.4rem;
+     }
+
+     .docs-content th,
+     .docs-content td {
+         padding: 8px; /* Reduce padding aún más */
+         font-size: 0.85rem;
+     }
+
+      .docs-content pre {
+          padding: 0.6rem;
+          font-size: 0.8rem;
+      }
+
+       .docs-content p code,
+       .docs-content li code,
+       .docs-content th code,
+       .docs-content td code {
+            padding: 1px 3px;
+            font-size: 0.8em;
+       }
+}
+
+
+/* Estilo para que el texto 'SUGERIR CAPTURA DE PANTALLA:' pueda ser seleccionado */
+/* Aunque es un comentario, si decides mostrarlo en algún modo debug, este estilo lo afectaría */
+/* Si lo dejas como comentario HTML, no necesita estilo CSS para ocultarlo */

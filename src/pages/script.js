@@ -10,19 +10,22 @@ document.addEventListener('DOMContentLoaded', () => {
     function setTheme(theme) {
         htmlElement.setAttribute('data-theme', theme);
         localStorage.setItem('theme', theme); // Guarda la preferencia en localStorage
-        updateThemeToggleIcon(theme); // Actualiza el icono
+        updateThemeToggleIcon(); // Actualiza el icono (no necesita el tema como arg, lee del html)
     }
 
     // Función para actualizar el icono del botón
-    function updateThemeToggleIcon(theme) {
+    function updateThemeToggleIcon() {
         const icon = themeToggleBtn.querySelector('i');
-        if (theme === 'dark') {
-            icon.classList.remove('fa-sun');
-            icon.classList.add('fa-moon'); // Mostrar luna en modo oscuro
-        } else {
-            icon.classList.remove('fa-moon');
-            icon.classList.add('fa-sun'); // Mostrar sol en modo claro
-        }
+        const currentTheme = htmlElement.getAttribute('data-theme'); // Lee el tema actual del html
+
+        // Elimina todas las clases de Font Awesome relacionadas con estilos, prefijos y iconos específicos
+        icon.classList.remove('fas', 'fa-solid', 'fa-regular', 'fa-sun', 'fa-moon', 'fa-lightbulb');
+
+        // Añade siempre las clases para el bombillo sólido
+        icon.classList.add('fa-solid', 'fa-lightbulb');
+
+        // El color se maneja completamente en CSS basándose en el data-theme
+        // No necesitamos añadir clases de color aquí en JS
     }
 
     // Cargar el tema preferido al iniciar
@@ -39,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
     themeToggleBtn.addEventListener('click', () => {
         const currentTheme = htmlElement.getAttribute('data-theme');
         const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-        setTheme(newTheme);
+        setTheme(newTheme); // Llama a setTheme, que a su vez llama a updateThemeToggleIcon
     });
 
     // Opcional: Escuchar cambios en la preferencia del sistema
@@ -72,8 +75,13 @@ document.addEventListener('DOMContentLoaded', () => {
     document.addEventListener('click', (event) => {
         const isClickInsideNav = navLinks.contains(event.target);
         const isClickOnToggle = mobileMenuToggleBtn.contains(event.target);
+        const isClickInsideHeader = document.querySelector('header').contains(event.target); // Prevent closing when clicking inside header but outside nav/toggle area
 
+        // Solo cierra si se hace clic fuera del menú *y* fuera del botón de toggle *y* fuera del área del header
+        // Esto previene cerrar el menú si el clic es en los iconos de utilidad que están dentro de nav-links
         if (navLinks.classList.contains('active') && !isClickInsideNav && !isClickOnToggle) {
+             // Opcionalmente, puedes ser aún más específico y chequear si el clic es en algún elemento interactivo dentro del header
+            // Pero la lógica actual (no isClickInsideNav, no isClickOnToggle) ya cubre la mayoría de los casos
             navLinks.classList.remove('active');
         }
     });

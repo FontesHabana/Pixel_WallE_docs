@@ -1,8 +1,8 @@
-/* --- Variables CSS para Temas --- */
 :root {
     /* Colores por defecto (Modo Oscuro) */
     --primary-bg: #1e1e2d; /* Fondo principal */
     --secondary-bg: #282c34; /* Fondo secundario (header, footer, items) */
+    --tertiary-bg: #3a3f4b; /* Tertiary background, good for mobile nav buttons */
     --primary-text: #f8f8f2; /* Color de texto principal */
     --secondary-text: #bbb; /* Color de texto secundario/opaco */
     --accent-color: #61dafb; /* Color de acento */
@@ -14,16 +14,22 @@
     --hero-gradient-end: #2a2a3a;
     --mobile-menu-bg: #282c34; /* Fondo del menú móvil */
     --mobile-menu-border: rgba(255, 255, 255, 0.1);
+    --footer-link-color: var(--secondary-text); /* Color del enlace del pie de página */
+
+    /* Colores específicos para el icono del tema */
+    --theme-icon-dark-mode: #ffff00; /* Amarillo para bombilla en modo oscuro */
+    --theme-icon-light-mode: var(--accent-color); /* Azul para bombilla en modo claro */
 }
 
 /* Variables para Modo Claro (Mejorada) */
 html[data-theme='light'] {
     --primary-bg: #edf2f7; /* Fondo principal suave */
     --secondary-bg: #e9ecef; /* Fondo secundario (header, footer, items) */
+    --tertiary-bg: #d0d6dc; /* Tertiary background for light mode buttons */
     --primary-text: #212529; /* Texto oscuro */
     --secondary-text: #495057; /* Texto grisáceo */
     --accent-color: #007bff; /* Azul de acento */
-    --button-bg: #007bff;
+    --button-bg: #006ee4;
     --button-text: #fff;
     --border-color: #ced4da; /* Borde gris claro */
     --card-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Sombra más clara */
@@ -31,6 +37,17 @@ html[data-theme='light'] {
     --hero-gradient-end: #00c6ff;
     --mobile-menu-bg: #e9ecef;
     --mobile-menu-border: rgba(0, 0, 0, 0.1);
+    --footer-link-color: var(--secondary-text); /* Color del enlace del pie de página */
+
+    /* Colores específicos para el icono del tema */
+    --theme-icon-dark-mode: #f39c12; /* Este color no se usará en modo claro */
+    --theme-icon-light-mode: var(--accent-color); /* Azul para bombilla en modo claro */
+    --tr-light-mode:#010101
+}
+
+html{
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
 }
 
 
@@ -120,10 +137,25 @@ nav a {
     display: block; /* Asegura que el padding funcione bien */
     padding: 5px 0; /* Pequeño padding vertical para el área de click */
 }
+/* Active link style */
+nav a.active {
+    color: var(--accent-color);
+    border-bottom: 2px solid var(--accent-color); /* Underline for active link */
+    padding-bottom: 3px; /* Adjust padding to make space for underline */
+}
 
 nav a:hover {
     color: var(--accent-color);
 }
+/* Active sub-section indicator in header */
+.language-nav-active {
+    display: none; /* Hidden by default */
+    margin-left: 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--secondary-text); /* Or accent color, depends on desired look */
+}
+
 
 /* Botón Hamburguesa y Iconos de Utilidad */
 .menu-toggle-button {
@@ -150,18 +182,36 @@ nav a:hover {
 .header-icon {
     background: none;
     border: none;
-    color: var(--primary-text);
+    /* Color por defecto puede ser primary-text, pero el icono del tema lo sobreescribe */
+    color: var(--primary-text); /* O dejar que herede y sobreescribir specificamente */
     font-size: 1.2rem; /* Tamaño estándar para iconos */
     cursor: pointer;
     margin-left: 15px; /* Espacio entre iconos */
     padding: 5px;
-    transition: color 0.3s ease;
+    transition: color 0.3s ease; /* Transición para color */
     text-decoration: none; /* Asegura que los enlaces no tengan subrayado */
 }
 
 .header-icon:hover {
     color: var(--accent-color);
 }
+
+/* Estilo específico para el icono dentro del botón de tema */
+#theme-toggle i {
+    /* Transición para el color, ya definida en .header-icon */
+    /* No necesitamos una transición de transformación aquí */
+}
+
+/* Color del icono de la bombilla en modo oscuro */
+html[data-theme='dark'] #theme-toggle i.fa-lightbulb {
+    color: var(--theme-icon-dark-mode); /* Amarillo */
+}
+
+/* Color del icono de la bombilla en modo claro */
+html[data-theme='light'] #theme-toggle i.fa-lightbulb {
+    color: var(--theme-icon-light-mode); /* Azul */
+}
+
 
 /* --- Sección Principal (Hero) --- */
 .hero {
@@ -198,14 +248,14 @@ nav a:hover {
     margin-bottom: 1rem;
     font-size: 3rem;
     text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
-    color: #fff;
+    color: #fff; /* Título del hero siempre blanco para contraste */
 }
 
 .hero p {
     margin-bottom: 2.5rem;
     font-size: 1.3rem;
     opacity: 0.95;
-    color: #e0e0e0;
+    color: #e0e0e0; /* Texto del hero siempre gris claro para contraste */
 }
 
 .btn-download {
@@ -219,19 +269,43 @@ nav a:hover {
     font-weight: bold;
     transition: background 0.3s ease, transform 0.1s ease, box-shadow 0.3s ease;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    /* Alinea items si hay un icono dentro */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.btn-download i {
+/* Estilo para el icono dentro del botón de descarga en la página principal */
+/* Asegúrate de que solo afecte al botón con icono, si usas la clase en otros sitios sin icono */
+.hero .btn-download i {
     margin-right: 10px;
+    /* Añadimos una transición para el efecto hover */
+    transition: transform 0.3s ease;
 }
+
 
 .btn-download:hover {
     background: var(--accent-color);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
      html[data-theme='light'] & {
-        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 6enso6px 12px rgba(0, 0, 0, 0.2);
      }
 }
+
+/* Efecto hover en el icono dentro del botón de descarga */
+.hero .btn-download:hover i {
+    transform: translateY(-2px); /* Ligeramente hacia arriba */
+}
+
+.hero img {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    box-shadow: var(--card-shadow);
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
 
 .btn-download:active {
     transform: scale(0.98);
@@ -252,6 +326,7 @@ nav a:hover {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
+    margin-bottom: 10px;
 }
 
 .feature-item {
@@ -320,6 +395,94 @@ nav a:hover {
     transition: box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
+/* --- Sección de Descarga (Download Page) --- */
+.download-page h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-size: 2.5rem;
+}
+
+.download-page > p { /* Selects the first paragraph directly under download-page */
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 1.1rem;
+    color: var(--secondary-text);
+     transition: color 0.3s ease;
+}
+
+.download-options-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Adjust minmax as needed */
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.platform-card {
+    background: var(--secondary-bg);
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: var(--card-shadow);
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid var(--border-color);
+    display: flex; /* Use flexbox for internal alignment */
+    flex-direction: column;
+    justify-content: space-between; /* Push button to bottom if content varies */
+}
+
+.platform-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+     html[data-theme='light'] & {
+         box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+     }
+}
+
+
+.platform-card i {
+    font-size: 3.5rem; /* Slightly larger icons */
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+    transition: color 0.3s ease;
+}
+
+.platform-card h3 {
+    margin-bottom: 0.8rem;
+     color: var(--primary-text);
+    font-size: 1.4rem;
+     transition: color 0.3s ease;
+}
+
+.platform-card p {
+    font-size: 1rem;
+    color: var(--secondary-text);
+    margin-bottom: 1.5rem; /* Space before the button */
+     transition: color 0.3s ease;
+     flex-grow: 1; /* Allow text to take available space */
+}
+
+.platform-card .btn-download {
+    /* Override some btn-download styles for card context if needed */
+    /* E.g., width: 100%; */
+    margin-top: auto; /* Push the button to the bottom if flex column */
+    /* Asegura que no haya espacio extra a la derecha si el icono no está presente */
+    display: inline-flex; /* Usar flex aunque no haya icono, mantiene alineación si se añade */
+    align-items: center;
+    justify-content: center;
+    padding-right: 2.5rem; /* Restaura el padding original */
+}
+
+.examples {
+    margin:40px 0 20px;
+}
+/* If you use .btn-download in download.html without an icon, you might need this */
+/* But generally, remove the <i> tag if there's no icon */
+/* .download-page .btn-download i {
+    display: none;
+    margin-right: 0;
+} */
+
+
 /* --- Pie de Página (Footer) --- */
 footer {
     background: var(--secondary-bg);
@@ -336,6 +499,18 @@ footer p {
 
 footer p:last-child {
     margin-bottom: 0;
+}
+
+/* Estilo específico para el enlace dentro del footer */
+footer a {
+    color: var(--footer-link-color); /* Usa la variable para el color del texto del footer */
+    text-decoration: none; /* Sin subrayado por defecto */
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: var(--accent-color); /* Cambia al color de acento en hover */
+    text-decoration: underline;
 }
 
 
@@ -356,51 +531,72 @@ footer p:last-child {
          /* En móvil, nav contiene el toggle y los iconos de utilidad */
          flex-grow: 1; /* Permite que nav ocupe espacio */
          justify-content: flex-end; /* Alinea el contenido de nav a la derecha */
+         flex-wrap: wrap; /* Allow items to wrap in nav */
+         padding-right: 10px; /* Small padding on the right */
     }
 
-     /* Mostrar el botón de hamburguesa en móvil */
-    .menu-toggle-button {
-        display: block;
-        order: 1; /* Ordena el botón después de los iconos */
-    }
-
-    .utility-icons {
-         margin-left: 0; /* Elimina margen izquierdo en móvil */
-         order: 2; /* Ordena los iconos antes del botón */
-    }
-
-     .header-icon {
-         font-size: 1.4rem; /* Iconos un poco más grandes en móvil */
-     }
-
-     /* Ocultar los enlaces de navegación por defecto en móvil */
-    .nav-links {
-        display: none;
+    nav ul {
         flex-direction: column;
-        background-color: var(--mobile-menu-bg); /* Fondo para el menú desplegable */
-        position: absolute;
-        top: 100%; /* Debajo del header */
+        width: 100%; /* Take full width in mobile dropdown */
+        position: absolute; /* Position below header */
+        top: 100%;
         left: 0;
-        width: 100%;
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        background-color: var(--mobile-menu-bg);
+        box-shadow: 0 8px 16px rgba(0,0,0,0.2);
         border-top: 1px solid var(--mobile-menu-border);
         padding: 1rem 0;
-        z-index: 999; /* Por debajo del header pero por encima del contenido */
+        display: none; /* Hidden by default */
+        z-index: 999;
     }
 
-    .nav-links.active {
-        display: flex; /* Mostrar cuando tenga la clase active */
+    nav ul.active {
+        display: flex; /* Show when active */
     }
 
-    .nav-links li {
-        margin: 0; /* Elimina margen horizontal */
+    nav ul li {
+        margin: 0; /* Remove horizontal margin */
         text-align: center;
     }
 
-    .nav-links a {
-        padding: 10px 0; /* Más padding vertical para cada enlace */
-        width: 100%; /* Asegura que ocupe todo el ancho del menú */
+    nav ul li a {
+        padding: 10px 0; /* More vertical padding */
+        width: 100%; /* Full width links */
+        border-bottom: none; /* Remove underline */
+        padding-bottom: 10px; /* Restore padding */
     }
+
+    nav a.active {
+        border-bottom: none; /* Remove underline in mobile nav */
+        color: var(--accent-color); /* Keep accent color */
+    }
+
+     /* Show the burger button in mobile */
+    .menu-toggle-button {
+        display: block;
+        order: 2; /* Order after utility icons */
+    }
+
+    .utility-icons {
+         margin-left: 0; /* Remove left margin */
+         order: 1; /* Order before burger button */
+    }
+
+     .header-icon {
+         font-size: 1.4rem; /* Larger icons */
+         margin-left: 10px; /* Adjust space between icons */
+     }
+
+     /* Show active sub-section indicator in mobile */
+     .language-nav-active {
+        display: block; /* Show in mobile */
+        order: 3; /* Position after icons and button */
+        width: 100%; /* Take full width */
+        text-align: center; /* Center the text */
+        margin-top: 10px; /* Space above the indicator */
+        margin-left: 0; /* Remove left margin */
+        font-size: 0.9rem; /* Smaller font size */
+        color: var(--accent-color); /* Use accent color */
+     }
 
 
     .hero {
@@ -421,14 +617,25 @@ footer p:last-child {
         font-size: 1.1rem;
     }
 
+    /* Adjust icon margin in download button in mobile */
+    .hero .btn-download i {
+        margin-right: 8px;
+    }
+
+
     section {
         padding: 3rem 0;
     }
 
-     .features h2, .screenshot h2 {
+     .features h2, .screenshot h2, .download-page h2 {
          font-size: 2rem;
          margin-bottom: 2rem;
      }
+
+     .download-page > p {
+         margin-bottom: 2rem;
+     }
+
 
      .feature-grid {
          gap: 20px;
@@ -442,6 +649,27 @@ footer p:last-child {
      .feature-item i {
          font-size: 2.5rem;
      }
+
+     .platform-card i {
+         font-size: 3rem;
+     }
+
+     .download-options-grid {
+         gap: 20px;
+         grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+     }
+
+     .platform-card {
+        padding: 1.5rem;
+     }
+
+      /* Adjust padding of download button in download.html in mobile */
+     .download-page .btn-download {
+         padding-right: 2.2rem; /* Restore padding in mobile */
+     }
+     
+
+
 }
 
 /* Móvil pequeño (ej: 480px y menos) */
@@ -464,26 +692,68 @@ footer p:last-child {
         font-size: 1rem;
     }
 
+    /* Adjust icon margin in download button in mobile small */
+    .hero .btn-download i {
+        margin-right: 6px;
+    }
+
+
     section {
         padding: 2rem 0;
     }
 
-    .features h2, .screenshot h2 {
+    .features h2, .screenshot h2, .download-page h2 {
          font-size: 1.8rem;
          margin-bottom: 1.5rem;
      }
 
-     .feature-grid {
+     .download-page > p {
+         margin-bottom: 1.5rem;
+     }
+
+     .feature-grid, .download-options-grid {
          grid-template-columns: 1fr;
          gap: 15px;
      }
 
-     .feature-item {
+     .feature-item, .platform-card {
          padding: 1.2rem;
      }
+
+     .platform-card i {
+         font-size: 2.8rem;
+     }
+
+     /* Adjust padding of download button in download.html in mobile small */
+     .download-page .btn-download {
+         padding-right: 1.8rem; /* Restore padding in mobile small */
+     }
+
 
     footer {
         padding: 1.5rem 0;
         font-size: 0.8rem;
     }
+}
+
+/* Styles for image placeholders */
+.image-placeholder {
+    border: 1px dashed var(--border-color);
+    background-color: var(--tertiary-bg);
+    color: var(--secondary-text);
+    text-align: center;
+    padding: 2rem;
+    margin: 1.5rem 0;
+    border-radius: 8px;
+    font-style: italic;
+}
+/* Add basic styling for img inside placeholder when images are added */
+.image-placeholder img {
+    max-width: 100%;
+    height: auto;
+    display: block; /* Remove extra space below image */
+    margin: 0 auto; /* Center the image */
+    border: none; /* Remove border if placeholder had one */
+    box-shadow: none; /* Remove shadow if placeholder had one */
+    border-radius: 0; /* Remove radius if placeholder had one */
 }
