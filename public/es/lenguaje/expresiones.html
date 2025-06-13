@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>pixelWallE Language - Expresiones y Listas</title> <!-- Título actualizado -->
+    <title>πxelStudioCode Language - Expresiones y Listas</title> <!-- Título actualizado -->
     <link rel="stylesheet" href="/src/styles/style.css"> <!-- Estilos generales -->
     <link rel="stylesheet" href="/src/styles/ideDocs.css"> <!-- Estilos específicos de documentación (reutilizado) -->
     <!-- Enlace a Font Awesome para iconos (versión más reciente si es posible) -->
@@ -26,9 +26,15 @@
                 <!-- Enlaces de navegación (ocultos en móvil, mostrados en el menú) -->
                 <ul class="nav-links">
                     <!-- Asegúrate de que estos enlaces apuntan a las páginas correctas -->
-                    <li><a href="docs.html">IDE</a></li>
-                    <li><a href="examples.html">Examples</a></li> <!-- Asume que los ejemplos están en la sección screenshot de index.html -->
-                    <li><a href="languageDocs.html" class="active">Language</a></li> <!-- Link to the main language page -->
+                    <li><a href="../documentación.html">Editor</a></li>
+                    <li><a href="../ejemplos.html">Ejemplos</a></li> <!-- Asume que los ejemplos están en la sección screenshot de index.html -->
+                    <li><a href="documentación.html" >Lenguaje</a></li> <!-- Link to the main language page -->
+                    <li><a href="../../eng/language/expressions.html" >EN</a></li>
+
+                    <li class="hiddenElemnts" ><a href="expresiones.html"  class="active">Expressiones</a></l> <!-- Asume que los ejemplos están en la sección screenshot de index.html -->
+                    <li class="hiddenElemnts"><a href="documentación.html">Comandos</a></li> <!-- Link to the main language page -->
+
+
                     <div class="utility-icons">
                     <a href="https://github.com/FontesHabana/Pixel_Wall-E" target="_blank" class="header-icon" aria-label="Ir a GitHub del proyecto">
                         <i class="fab fa-github"></i>
@@ -39,7 +45,7 @@
                     </button>
                 </div>
                 </ul>
-                 <div class="language-nav-active">Expresiones y Listas</div> <!-- Indicator for the active sub-section -->
+                 
             </nav>
         </div>
     </header>
@@ -50,8 +56,8 @@
             <aside class="docs-sidebar">
                 <nav>
                     <ul>
-                        <li><a href="languageDocs.html">Introducción General</a></li>
-                        <li><a href="languageExpression.html" class="active">Expresiones y Listas</a>
+                        <li><a href="documentación.html">Introducción General</a></li>
+                        <li><a href="expresiones.html" class="active">Expresiones y Listas</a>
                              <ul>
                                  <li><a href="#introduction-expressions">Introducción</a></li>
                                  <li><a href="#literals">Literales</a></li>
@@ -65,7 +71,7 @@
                                  <li><a href="#list-methods">Métodos</a></li>
                              </ul>
                         </li>
-                        <li><a href="languageStatements.html">Comandos (Sentencias) y Funciones</a></li>
+                        <li><a href="comandos.html">Comandos y Funciones</a></li>
                         <!-- Add more top-level language topics here if they get their own page -->
                     </ul>
                 </nav>
@@ -84,15 +90,15 @@
                     <p>Los literales son valores fijos que aparecen directamente en tu código. Son la forma más simple de expresión, ya que se evalúan a sí mismos.</p>
                     <ul>
                         <li>
-                            <p><strong>Números:</strong> Representan valores numéricos enteros o decimales.</p>
+                            <p><strong>Números:</strong> Representan valores numéricos enteros.</p>
                             <pre><code class="language-pixelwalle">10
 -5
-3.14
+3
 0
 </code></pre>
                         </li>
                         <li>
-                            <p><strong>Cadenas de Texto (Strings):</strong> Representan secuencias de caracteres, usualmente usadas para nombres de colores, códigos Hex, o etiquetas.</p>
+                            <p><strong>Cadenas de Texto:</strong> Representan secuencias de caracteres, usualmente usadas para nombres de colores, códigos Hex, o mensajes.</p>
                             <pre><code class="language-pixelwalle">"red"
 "#FF0000"
 "MiEtiqueta"
@@ -106,16 +112,16 @@ false
 </code></pre>
                         </li>
                          <li>
-                            <p><strong>Literales de Lista:</strong> Representan una colección ordenada de elementos del mismo tipo base.</p>
-                             <pre><code class="language-pixelwalle">List<int> [1, 2, 3]
-List<string> ["red", "blue", "green"]
-List<bool> [] // Lista vacía
+                            <p><strong>Listas:</strong> Representan una colección ordenada de elementos del mismo tipo base.</p>
+                             <pre><code class="language-pixelwalle">List< int > [1, 2, 3] <br>
+List < string > ["red", "blue", "green"] <br>
+List< bool > [] // Lista vacía
 </code></pre>
                         </li>
                          <li>
                             <p><strong>Llamadas a Funciones:</strong> Aunque son operaciones, el *resultado* de una función es un valor que puede ser tratado como un literal dentro de una expresión.</p>
                              <pre><code class="language-pixelwalle">GetActualX() // Esto devuelve un número
-IsBrushColor("blue") // Esto devuelve un booleano
+<br>IsBrushColor("blue") // Esto devuelve un booleano
 </code></pre>
                             <p>Consulta la sección de <a href="language-docs-statements.html#functions">Funciones</a> para más detalles.</p>
                         </li>
@@ -138,9 +144,9 @@ IsBrushColor("blue") // Esto devuelve un booleano
                             </li>
                             <li>
                                 <p><strong>Negación Lógica (`!`):</strong> Invierte un valor booleano.</p>
-                                <pre><code class="language-pixelwalle">!true // Se evalúa a false
+                                <pre><code class="language-pixelwalle">!true // Se evalúa a false <br>
 !IsBrushColor("black") // Si IsBrushColor("black") devuelve true, esto evalúa a false
-</code></pre>
+</code ></pre>
                             </li>
                         </ul>
                     </section>
@@ -149,8 +155,8 @@ IsBrushColor("blue") // Esto devuelve un booleano
                         <h3>Expresiones Binarias</h3>
                         <p>Operan sobre dos operandos y un operador.</p>
                         <h4>Operadores Aritméticos:</h4>
-                        <ul>
-                            <li>`+` (Suma)</li>
+                        <ul >
+                            <li >`+` (Suma)</li>
                             <li>`-` (Resta)</li>
                             <li>`*` (Multiplicación)</li>
                             <li>`**` (Potencia)</li>
@@ -159,13 +165,13 @@ IsBrushColor("blue") // Esto devuelve un booleano
                         </ul>
                          <pre><code class="language-pixelwalle">10 + 5          # Se evalúa a 15
 GetActualY() * 2 # Multiplica la posición Y actual por 2
-(Size(5) + 1) / 2 # Suma 1 al resultado de Size(5), luego divide por 2
+(GetActualX() + 1) / 2 # Suma 1 al resultado de GetActualX, luego divide por 2
 4 ** 2          # Se evalúa a 16
 10 % 3          # Se evalúa a 1
 </code></pre>
                          <p>La suma (`+`) también puede ser utilizada para concatenar cadenas de texto.</p>
                          <pre><code class="language-pixelwalle">"Pixel" + "WallE" # Se evalúa a "PixelWallE"
-"Tamaño: " + GetCanvasSize() # Concatena texto y número (conversión automática)
+"Tamaño: " + GetCanvasSize() #Concatena texto y número (conversión automática)
 </code></pre>
 
                          <h4>Operadores Lógicos y de Comparación:</h4>
@@ -203,12 +209,12 @@ true && (GetCanvasSize() > 50) # ¿Verdadero Y el lienzo es mayor de 50? (Boolea
                      <section id="list-declaration">
                          <h3>Declaración e Inicialización</h3>
                          <p>Se declaran usando la palabra clave <code>List</code>, seguida del tipo base de los elementos entre <code>&lt;&gt;</code> y un nombre identificador (el nombre de tu lista). Se pueden inicializar al mismo tiempo con un literal de lista.</p>
-                         <pre><code class="language-pixelwalle">List<int> myNumbers = [1, 5, 10, 20]; # Declara e inicializa una lista de enteros
-List<string> colors = ["red", "green", "blue", "#FF0000"]; # Declara e inicializa una lista de cadenas
-List<bool> emptyList = List<bool> []; # Declara e inicializa una lista de booleanos vacía
+                         <pre><code class="language-pixelwalle"> myNumbers <- List< int >[1, 5, 10, 20]; # Declara e inicializa una lista de enteros
+colors <- List< string > ["red", "green", "blue", "#FF0000"]; # Declara e inicializa una lista de cadenas
+ emptyList <- List< bool > []; # Declara e inicializa una lista de booleanos vacía
 </code></pre>
-                         <p>Una vez declarada, puedes asignar una nueva lista del mismo tipo o el resultado de una expresión que devuelva una lista (si existen tales funciones).</p>
-                          <pre><code class="language-pixelwalle">myNumbers = [100, 200]; # Reemplaza el contenido de myNumbers
+                         <p>Una vez declarada, puedes asignar una nueva lista del mismo tipo.</p>
+                          <pre><code class="language-pixelwalle">myNumbers <- [100, 200]; # Reemplaza el contenido de myNumbers
 </code></pre>
                      </section>
 

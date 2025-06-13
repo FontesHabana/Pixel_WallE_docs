@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>pixelWallE Language - Introducción</title> <!-- Título actualizado -->
+    <title>πxelStudioCode Language - Introducción</title> <!-- Título actualizado -->
     <link rel="stylesheet" href="/src/styles/style.css"> <!-- Estilos generales -->
     <link rel="stylesheet" href="/src/styles/ideDocs.css"> <!-- Estilos específicos de documentación (reutilizado) -->
     <!-- Enlace a Font Awesome para iconos (versión más reciente si es posible) -->
@@ -26,9 +26,10 @@
                 <!-- Enlaces de navegación (ocultos en móvil, mostrados en el menú) -->
                 <ul class="nav-links">
                     <!-- Asegúrate de que estos enlaces apuntan a las páginas correctas -->
-                    <li><a href="docs.html">IDE</a></li>
-                    <li><a href="examples.html">Examples</a></li> <!-- Asume que los ejemplos están en la sección screenshot de index.html -->
-                    <li><a href="languageDocs.html" class="active">Language</a></li> <!-- Enlace a esta página, marcado como activo -->
+                    <li><a href="../documentación.html">Editor</a></li>
+                    <li><a href="../ejemplos.html">Ejemplos</a></li> <!-- Asume que los ejemplos están en la sección screenshot de index.html -->
+                    <li><a href="documentación.html" class="active">Lenguaje</a></li> <!-- Enlace a esta página, marcado como activo -->
+                    <li><a href="../../eng/language/documentation.html" >EN</a></li>
                     <div class="utility-icons">
                     <a href="https://github.com/FontesHabana/Pixel_Wall-E" target="_blank" class="header-icon" aria-label="Ir a GitHub del proyecto">
                         <i class="fab fa-github"></i>
@@ -51,9 +52,9 @@
                 <nav>
                     <ul>
                         <li><a href="#introduction" class="active">Introducción</a></li>
-                        <li><a href="#grammar-overview">Vista General de la Gramática</a></li>
-                        <li><a href="languageExpression.html">Expresiones y Listas</a></li>
-                        <li><a href="languageStatements.html">Comandos (Sentencias) y Funciones</a></li>
+                        <li><a href="#grammar-overview">Vista General </a></li>
+                        <li><a href="expresiones.html">Expresiones y Listas</a></li>
+                        <li><a href="comandos.html">Comandos y Funciones</a></li>
                         <!-- Add more top-level language topics here if they get their own page -->
                     </ul>
                 </nav>
@@ -69,34 +70,15 @@
                     <p>Esta página te ofrece una visión general del lenguaje. Para profundizar en los detalles de cada componente, navega usando la barra lateral:</p>
                      <ul>
                          <li><a href="language-docs-expressions.html"><strong>Expresiones y Listas:</strong></a> Aprende sobre los tipos de datos (literales), cómo combinarlos con operadores para formar expresiones y cómo manejar colecciones de datos usando listas.</li>
-                         <li><a href="language-docs-statements.html"><strong>Comandos (Sentencias) y Funciones:</strong></a> Descubre las instrucciones que le dicen a pixelWallE qué dibujar o hacer en el lienzo (comandos) y cómo obtener información sobre el estado actual del editor o del lienzo (funciones).</li>
+                         <li><a href="language-docs-statements.html"><strong>Comandos y Funciones:</strong></a> Descubre las instrucciones que le dicen a pixelWallE qué dibujar o hacer en el lienzo (comandos) y cómo obtener información sobre el estado actual del editor o del lienzo (funciones).</li>
+
+                          <li><strong>Comentarios:</strong>Crea documentación y código mas accesible para otros desarrolladores utilizando  <pre><code class="language-pixelwalle">#Esto es un comentario
+</code></pre></li>
                      </ul>
                 </section>
 
-                 <section id="grammar-overview">
-                    <h2>Vista General de la Gramática</h2>
-                    <p>La gramática define la estructura del lenguaje pixelWallE. Comprenderla te ayudará a escribir código sintácticamente correcto.</p>
-                     <p>El código se compone de una secuencia de sentencias. Las sentencias pueden ser comandos de dibujo, declaraciones de variables, estructuras de control de flujo (si existen) o incluso expresiones que tengan efectos secundarios.</p>
-                    <p>Aquí tienes una representación simplificada de la estructura del lenguaje. Las partes detalladas de Literales, Expresiones, Listas, Comandos y Funciones se explican en las páginas dedicadas.</p>
-                     <pre><code class="language-pixelwalle">program ::= statement*
-
-statement ::= command_statement
-          | declaration // e.g., List<int> numbers = [...]
-          | expression ; // Some expressions might be valid statements if they have side effects, like function calls
-
-// Detailed breakdown of these parts can be found on the other pages:
-// See "Expresiones y Listas" for:
-// literal, expression, list_literal, declaration, list_access, method_call, unary, binary, grouping, operator, baseType, expression_list
-
-// See "Comandos (Sentencias) y Funciones" for:
-// command_statement, command_name, function_call, function_name, argument_list
-// (Note: Control flow like labels and goto are not explicitly in the provided grammar but are mentioned in docs.html GoTo section. Add them here if they are part of the language).
-// Example (if labels/goto exist):
-// statement ::= ... | label | goto_statement
-// label ::= Identifier ":"
-// goto_statement ::= "goto" Identifier ;
-</code></pre>
-                     <p>Para una explicación detallada de cada elemento, por favor, consulta las páginas correspondientes en la barra lateral.</p>
+               
+                     
                  </section>
 
             </article>
