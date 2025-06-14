@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark"> <!-- Por defecto en modo oscuro -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pixelWallE Editor - Descargar</title> <!-- Título actualizado -->
+    <link rel="stylesheet" href="/src/styles/style.css">
+    <!-- Enlace a Font Awesome para iconos (versión más reciente si es posible) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Puedes enlazar fuentes externas aquí si lo deseas -->
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet"> -->
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <div class="logo">πxelStudioCode</div>
+            <nav>
+                 <!-- Botón Hamburguesa (visible solo en móvil/tablet) -->
+                <button id="mobile-menu-toggle" class="menu-toggle-button" aria-label="Toggle mobile menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+                 <!-- Iconos de utilidad (visibles en todas partes, pero movidos en móvil) -->
+
+                <!-- Enlaces de navegación (ocultos en móvil, mostrados en el menú) -->
+                <ul class="nav-links">
+                    <!-- Asegúrate de que estos enlaces apuntan de nuevo a la página principal o a las secciones relevantes si están en diferentes archivos -->
+                    <li><a href="ideDocs/docs.html">IDE</a></li>
+                    <li><a href="examples.html">Examples</a></li>
+                    <li><a href="languageDocs.html" target="_blank">Language</a></li>
+                    <div class="utility-icons">
+                    <a href="URL_GITHUB_PROYECTO" target="_blank" class="header-icon" aria-label="Ir a GitHub del proyecto">
+                        <i class="fab fa-github"></i>
+                    </a>
+
+                    <button id="theme-toggle" class="header-icon theme-toggle-button" aria-label="Toggle theme">
+                        <i class="fas fa-sun"></i> <!-- Icono de sol por defecto, actualizado por JS a sol/bombilla -->
+                    </button>
+                </div>
+                </ul>
+
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="download-page">
+            <div class="container">
+                <h2>Descarga pixelWallE</h2>
+                <p>Selecciona tu sistema operativo para descargar la última versión del editor pixelWallE y comienza a crear arte con código.</p>
+
+                <div class="download-options-grid">
+
+                    <!-- Opción Windows -->
+                    <div class="platform-card">
+                        <i class="fab fa-windows"></i>
+                        <h3>Windows</h3>
+                        <p>Compatible con Windows 10 y versiones posteriores (64 bits). Descarga el instalador o el archivo portable.</p>
+                        <!-- Reemplaza URL_DESCARGA_WINDOWS por el enlace real -->
+                        <!-- ICONO ELIMINADO AQUÍ -->
+                        <a href="URL_DESCARGA_WINDOWS" class="btn-download">Descargar para Windows</a>
+                    </div>
+
+                    <!-- Opción macOS -->
+                    <div class="platform-card">
+                        <i class="fab fa-apple"></i>
+                        <h3>macOS</h3>
+                        <p>Compatible con macOS 10.15 (Catalina) y versiones posteriores. Disponible para procesadores Intel y Apple Silicon.</p>
+                         <!-- Reemplaza URL_DESCARGA_MACOS por el enlace real -->
+                         <!-- ICONO ELIMINADO AQUÍ -->
+                        <a href="URL_DESCARGA_MACOS" class="btn-download">Descargar para macOS</a>
+                    </div>
+
+                    <!-- Opción Linux -->
+                    <div class="platform-card">
+                        <i class="fab fa-linux"></i>
+                        <h3>Linux</h3>
+                        <p>Ofrecemos un paquete universal (AppImage, Flatpak, o Tarball) compatible con la mayoría de distribuciones modernas.</p>
+                         <!-- Reemplaza URL_DESCARGA_LINUX por el enlace real -->
+                         <!-- ICONO ELIMINADO AQUÍ -->
+                        <a href="URL_DESCARGA_LINUX" class="btn-download">Descargar para Linux</a>
+                    </div>
+
+                </div>
+
+                <!-- Puedes añadir más info aquí, como requisitos mínimos, instrucciones de instalación, etc. -->
+                <!--
+                <div style="text-align: center; margin-top: 4rem;">
+                    <h3>Requisitos Mínimos</h3>
+                    <p>Consulta la documentación oficial para los requisitos detallados de cada plataforma.</p>
+                     <a href="URL_DE_LA_DOCUMENTACION_PIXELWALLE" class="btn-download" style="padding: 0.8rem 2rem; font-size: 1rem;">Ver Documentación</a>
+                </div>
+                 -->
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2025 πxelStudioCode</p>
+            <!-- Enlace personal de GitHub, manteniendo el color del texto del footer -->
+            <p>Developed by <a href="URL_TU_GITHUB_PERSONAL" target="_blank">Javier Fontes Basabe</a>.</p>
+            <!-- Puedes añadir más info o enlaces aquí -->
+        </div>
+    </footer>
+
+    <script src="/src/pages/script.js"></script> <!-- Enlaza tu archivo JavaScript -->
+
+</body>
+</html>

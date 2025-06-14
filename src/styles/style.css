@@ -76,13 +76,11 @@ body {
     max-width: 1200px;
     margin: auto;
     overflow: hidden;
-    gap: 400PX;
-    
 }
 .topC
 {
-    margin-right: 100PX;
-}   
+    margin-right: 200px;
+}
 
 section {
     padding: 4rem 0;

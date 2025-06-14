@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="es" data-theme="dark"> <!-- Por defecto en modo oscuro -->
+<html lang="en" data-theme="dark"> <!-- Default to dark mode -->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>pixelWallE Language - Expresiones y Listas</title> <!-- Título actualizado -->
-    <link rel="stylesheet" href="/src/styles/style.css"> <!-- Estilos generales -->
-    <link rel="stylesheet" href="/src/styles/ideDocs.css"> <!-- Estilos específicos de documentación (reutilizado) -->
-    <!-- Enlace a Font Awesome para iconos (versión más reciente si es posible) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <!-- Puedes enlazar fuentes externas aquí si lo deseas -->
+    <title>πxelStudioCode Language - Expressions and Lists</title> <!-- Updated Title -->
+    <link rel="stylesheet" href="/src/styles/style.css"> <!-- General styles -->
+    <link rel="stylesheet" href="/src/styles/ideDocs.css"> <!-- Specific documentation styles (reused) -->
+    <!-- Link to Font Awesome for icons (most recent version if possible) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" xintegrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- You can link external fonts here if desired -->
     <!-- <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet"> -->
 </head>
 <body>
@@ -17,237 +17,243 @@
         <div class="container">
             <div class="logo">πxelStudioCode</div>
             <nav>
-                 <!-- Botón Hamburguesa (visible solo en móvil/tablet) -->
+                 <!-- Hamburger Button (visible only on mobile/tablet) -->
                 <button id="mobile-menu-toggle" class="menu-toggle-button" aria-label="Toggle mobile menu">
                     <i class="fas fa-bars"></i>
                 </button>
-                 <!-- Iconos de utilidad (visibles en todas partes, pero movidos en móvil) -->
+                 <!-- Utility Icons (visible everywhere, but moved on mobile) -->
 
-                <!-- Enlaces de navegación (ocultos en móvil, mostrados en el menú) -->
+                <!-- Navigation Links (hidden on mobile, shown in menu) -->
                 <ul class="nav-links">
-                    <!-- Asegúrate de que estos enlaces apuntan a las páginas correctas -->
-                    <li><a href="docs.html">IDE</a></li>
-                    <li><a href="examples.html">Examples</a></li> <!-- Asume que los ejemplos están en la sección screenshot de index.html -->
-                    <li><a href="languageDocs.html" class="active">Language</a></li> <!-- Link to the main language page -->
+                    <!-- Make sure these links point to the correct pages -->
+                    <li><a href="../docs.html">IDE</a></li>
+                    <li><a href="../examples.html">Examples</a></li> <!-- Assumes examples are in the screenshot section of index.html -->
+                    <li><a href="documentation.html" >Language</a></li> <!-- Link to the main language page -->
+                    <li><a href="../../es/lenguaje/expresiones.html" >ES</a></li>
+
+                    <li class="hiddenElemnts" ><a href="expressions.html"  class="active">Expressions</a></l> <!-- Assumes examples are in the screenshot section of index.html -->
+                    <li class="hiddenElemnts"><a href="statements.html">Commands</a></li> <!-- Link to the main language page -->
+
+
                     <div class="utility-icons">
-                    <a href="https://github.com/FontesHabana/Pixel_Wall-E" target="_blank" class="header-icon" aria-label="Ir a GitHub del proyecto">
+                    <a href="https://github.com/FontesHabana/Pixel_Wall-E" target="_blank" class="header-icon" aria-label="Go to project GitHub">
                         <i class="fab fa-github"></i>
                     </a>
 
                     <button id="theme-toggle" class="header-icon theme-toggle-button" aria-label="Toggle theme">
-                        <i class="fas fa-sun"></i> <!-- Icono de sol por defecto, actualizado por JS a bombilla -->
+                        <i class="fas fa-sun"></i> <!-- Sun icon by default, updated by JS to lightbulb -->
                     </button>
                 </div>
                 </ul>
-                 <div class="language-nav-active">Expresiones y Listas</div> <!-- Indicator for the active sub-section -->
+                 
             </nav>
         </div>
     </header>
 
     <main>
         <div class="docs-container container">
-            <!-- Barra Lateral de Navegación -->
+            <!-- Sidebar Navigation -->
             <aside class="docs-sidebar">
                 <nav>
                     <ul>
-                        <li><a href="languageDocs.html">Introducción General</a></li>
-                        <li><a href="languageExpression.html" class="active">Expresiones y Listas</a>
+                        <li><a href="documentation.html">General Introduction</a></li>
+                        <li><a href="expressions.html" class="active">Expressions and Lists</a>
                              <ul>
-                                 <li><a href="#introduction-expressions">Introducción</a></li>
-                                 <li><a href="#literals">Literales</a></li>
-                                 <li><a href="#expressions">Expresiones</a></li>
-                                 <li><a href="#unary-expressions">Unarias</a></li>
-                                 <li><a href="#binary-expressions">Binarias</a></li>
-                                 <li><a href="#grouping">Agrupación</a></li>
-                                 <li><a href="#lists">Listas</a></li>
-                                 <li><a href="#list-declaration">Declaración</a></li>
-                                 <li><a href="#list-access">Acceso</a></li>
-                                 <li><a href="#list-methods">Métodos</a></li>
+                                 <li><a href="#introduction-expressions">Introduction</a></li>
+                                 <li><a href="#literals">Literals</a></li>
+                                 <li><a href="#expressions">Expressions</a></li>
+                                 <li><a href="#unary-expressions">Unary</a></li>
+                                 <li><a href="#binary-expressions">Binary</a></li>
+                                 <li><a href="#grouping">Grouping</a></li>
+                                 <li><a href="#lists">Lists</a></li>
+                                 <li><a href="#list-declaration">Declaration</a></li>
+                                 <li><a href="#list-access">Access</a></li>
+                                 <li><a href="#list-methods">Methods</a></li>
                              </ul>
                         </li>
-                        <li><a href="languageStatements.html">Comandos (Sentencias) y Funciones</a></li>
+                        <li><a href="statements.html">Commands and Functions</a></li>
                         <!-- Add more top-level language topics here if they get their own page -->
                     </ul>
                 </nav>
             </aside>
 
-            <!-- Contenido Principal de la Documentación del Lenguaje - Expresiones y Listas -->
+            <!-- Main Language Documentation Content - Expressions and Lists -->
             <article class="docs-content">
 
                  <section id="introduction-expressions">
-                     <h1>Expresiones, Literales y Listas</h1>
-                     <p>En esta sección, exploraremos los bloques básicos de construcción de valores en pixelWallE: los literales, cómo se combinan para formar expresiones y cómo organizar colecciones de datos usando listas.</p>
+                     <h1>Expressions, Literals, and Lists</h1>
+                     <p>In this section, we will explore the basic building blocks of values in pixelWallE: literals, how they combine to form expressions, and how to organize data collections using lists.</p>
                  </section>
 
                 <section id="literals">
-                    <h2>Literales</h2>
-                    <p>Los literales son valores fijos que aparecen directamente en tu código. Son la forma más simple de expresión, ya que se evalúan a sí mismos.</p>
+                    <h2>Literals</h2>
+                    <p>Literals are fixed values that appear directly in your code. They are the simplest form of expression, as they evaluate to themselves.</p>
                     <ul>
                         <li>
-                            <p><strong>Números:</strong> Representan valores numéricos enteros o decimales.</p>
+                            <p><strong>Numbers:</strong> Represent integer numerical values.</p>
                             <pre><code class="language-pixelwalle">10
 -5
-3.14
+3
 0
 </code></pre>
                         </li>
                         <li>
-                            <p><strong>Cadenas de Texto (Strings):</strong> Representan secuencias de caracteres, usualmente usadas para nombres de colores, códigos Hex, o etiquetas.</p>
+                            <p><strong>Strings:</strong> Represent sequences of characters, usually used for color names, Hex codes, or messages.</p>
                             <pre><code class="language-pixelwalle">"red"
 "#FF0000"
-"MiEtiqueta"
+"MyLabel"
 "Hello PixelWallE"
 </code></pre>
                         </li>
                         <li>
-                            <p><strong>Booleanos:</strong> Representan valores de verdad: verdadero o falso.</p>
+                            <p><strong>Booleans:</strong> Represent truth values: true or false.</p>
                             <pre><code class="language-pixelwalle">true
 false
 </code></pre>
                         </li>
                          <li>
-                            <p><strong>Literales de Lista:</strong> Representan una colección ordenada de elementos del mismo tipo base.</p>
-                             <pre><code class="language-pixelwalle">List<int> [1, 2, 3]
-List<string> ["red", "blue", "green"]
-List<bool> [] // Lista vacía
+                            <p><strong>Lists:</strong> Represent an ordered collection of elements of the same base type.</p>
+                             <pre><code class="language-pixelwalle">List< int > [1, 2, 3] <br>
+List < string > ["red", "blue", "green"] <br>
+List< bool > [] // Empty list
 </code></pre>
                         </li>
                          <li>
-                            <p><strong>Llamadas a Funciones:</strong> Aunque son operaciones, el *resultado* de una función es un valor que puede ser tratado como un literal dentro de una expresión.</p>
-                             <pre><code class="language-pixelwalle">GetActualX() // Esto devuelve un número
-IsBrushColor("blue") // Esto devuelve un booleano
+                            <p><strong>Function Calls:</strong> Although they are operations, the *result* of a function is a value that can be treated as a literal within an expression.</p>
+                             <pre><code class="language-pixelwalle">GetActualX() // This returns a number
+<br>IsBrushColor("blue") // This returns a boolean
 </code></pre>
-                            <p>Consulta la sección de <a href="language-docs-statements.html#functions">Funciones</a> para más detalles.</p>
+                            <p>See the <a href="language-docs-statements.html#functions">Functions</a> section for more details.</p>
                         </li>
                     </ul>
                 </section>
 
                 <section id="expressions">
-                    <h2>Expresiones</h2>
-                    <p>Las expresiones son combinaciones de literales, variables, operadores y llamadas a funciones que se evalúan para producir un valor. Este valor puede ser un número, una cadena de texto, un booleano o una lista.</p>
+                    <h2>Expressions</h2>
+                    <p>Expressions are combinations of literals, variables, operators, and function calls that evaluate to produce a value. This value can be a number, a string, a boolean, or a list.</p>
 
                     <section id="unary-expressions">
-                        <h3>Expresiones Unarias</h3>
-                        <p>Operan sobre un único operando.</p>
+                        <h3>Unary Expressions</h3>
+                        <p>Operate on a single operand.</p>
                         <ul>
                             <li>
-                                <p><strong>Negación Numérica (`-`):</strong> Cambia el signo de un número.</p>
+                                <p><strong>Numerical Negation (`-`):</strong> Changes the sign of a number.</p>
                                 <pre><code class="language-pixelwalle">-10
--(5 + 3) // Evalúa la expresión entre paréntesis primero
+-(5 + 3) // Evaluates the expression in parentheses first
 </code></pre>
                             </li>
                             <li>
-                                <p><strong>Negación Lógica (`!`):</strong> Invierte un valor booleano.</p>
-                                <pre><code class="language-pixelwalle">!true // Se evalúa a false
-!IsBrushColor("black") // Si IsBrushColor("black") devuelve true, esto evalúa a false
-</code></pre>
+                                <p><strong>Logical Negation (`!`):</strong> Inverts a boolean value.</p>
+                                <pre><code class="language-pixelwalle">!true // Evaluates to false <br>
+!IsBrushColor("black") // If IsBrushColor("black") returns true, this evaluates to false
+</code ></pre>
                             </li>
                         </ul>
                     </section>
 
                      <section id="binary-expressions">
-                        <h3>Expresiones Binarias</h3>
-                        <p>Operan sobre dos operandos y un operador.</p>
-                        <h4>Operadores Aritméticos:</h4>
-                        <ul>
-                            <li>`+` (Suma)</li>
-                            <li>`-` (Resta)</li>
-                            <li>`*` (Multiplicación)</li>
-                            <li>`**` (Potencia)</li>
-                            <li>`%` (Módulo - resto de la división)</li>
-                            <li>`/` (División)</li>
+                        <h3>Binary Expressions</h3>
+                        <p>Operate on two operands and an operator.</p>
+                        <h4>Arithmetic Operators:</h4>
+                        <ul >
+                            <li >`+` (Addition)</li>
+                            <li>`-` (Subtraction)</li>
+                            <li>`*` (Multiplication)</li>
+                            <li>`**` (Power)</li>
+                            <li>`%` (Modulo - remainder of the division)</li>
+                            <li>`/` (Division)</li>
                         </ul>
-                         <pre><code class="language-pixelwalle">10 + 5          # Se evalúa a 15
-GetActualY() * 2 # Multiplica la posición Y actual por 2
-(Size(5) + 1) / 2 # Suma 1 al resultado de Size(5), luego divide por 2
-4 ** 2          # Se evalúa a 16
-10 % 3          # Se evalúa a 1
+                         <pre><code class="language-pixelwalle">10 + 5          # Evaluates to 15
+GetActualY() * 2 # Multiplies the current Y position by 2
+(GetActualX() + 1) / 2 # Adds 1 to the result of GetActualX, then divides by 2
+4 ** 2          # Evaluates to 16
+10 % 3          # Evaluates to 1
 </code></pre>
-                         <p>La suma (`+`) también puede ser utilizada para concatenar cadenas de texto.</p>
-                         <pre><code class="language-pixelwalle">"Pixel" + "WallE" # Se evalúa a "PixelWallE"
-"Tamaño: " + GetCanvasSize() # Concatena texto y número (conversión automática)
+                         <p>Addition (`+`) can also be used to concatenate strings.</p>
+                         <pre><code class="language-pixelwalle">"Pixel" + "WallE" # Evaluates to "PixelWallE"
+"Size: " + GetCanvasSize() #Concatenates text and number (automatic conversion)
 </code></pre>
 
-                         <h4>Operadores Lógicos y de Comparación:</h4>
+                         <h4>Logical and Comparison Operators:</h4>
                         <ul>
-                            <li>`<` (Menor que)</li>
-                            <li>`<=` (Menor o igual que)</li>
-                            <li>`>` (Mayor que)</li>
-                            <li>`>=` (Mayor o igual que)</li>
-                            <li>`==` (Igual a)</li>
-                            <li>`!=` (Distinto de)</li>
-                            <li>`&&` (AND lógico)</li>
-                            <li>`||` (OR lógico)</li>
+                            <li>`<` (Less than)</li>
+                            <li>`<=` (Less than or equal to)</li>
+                            <li>`>` (Greater than)</li>
+                            <li>`>=` (Greater than or equal to)</li>
+                            <li>`==` (Equal to)</li>
+                            <li>`!=` (Not equal to)</li>
+                            <li>`&&` (Logical AND)</li>
+                            <li>`||` (Logical OR)</li>
                         </ul>
-                         <pre><code class="language-pixelwalle">GetActualX() > 100             # ¿Es la posición X mayor que 100? (Booleano)
-IsColor("#00FF00", 5, 5) == true # ¿El píxel en (5,5) es verde? (Booleano)
-true && (GetCanvasSize() > 50) # ¿Verdadero Y el lienzo es mayor de 50? (Booleano)
-"red" != "blue"                # ¿"red" es distinto de "blue"? (true)
+                         <pre><code class="language-pixelwalle">GetActualX() > 100             # Is the X position greater than 100? (Boolean)
+IsColor("#00FF00", 5, 5) == true # Is the pixel at (5,5) green? (Boolean)
+true && (GetCanvasSize() > 50) # True AND canvas size is greater than 50? (Boolean)
+"red" != "blue"                # "red" is not equal to "blue"? (true)
 </code></pre>
                     </section>
 
                      <section id="grouping">
-                        <h3>Agrupación con Paréntesis</h3>
-                        <p>Los paréntesis `()` se usan para controlar el orden de evaluación de las expresiones, asegurando que ciertas partes se calculen antes que otras. Esto es fundamental para la claridad y la lógica de tus cálculos.</p>
-                         <pre><code class="language-pixelwalle">(5 + 3) * 2 # La suma (8) se hace antes que la multiplicación (8 * 2 = 16)
-5 + (3 * 2) # La multiplicación (6) se hace antes que la suma (5 + 6 = 11)
+                        <h3>Grouping with Parentheses</h3>
+                        <p>Parentheses `()` are used to control the order of evaluation of expressions, ensuring that certain parts are calculated before others. This is fundamental for the clarity and logic of your calculations.</p>
+                         <pre><code class="language-pixelwalle">(5 + 3) * 2 # Addition (8) is done before multiplication (8 * 2 = 16)
+5 + (3 * 2) # Multiplication (6) is done before addition (5 + 6 = 11)
 </code></pre>
                     </section>
 
                 </section>
 
                  <section id="lists">
-                     <h2>Listas</h2>
-                     <p>Las listas son colecciones ordenadas y mutables de elementos del mismo tipo base (números, cadenas de texto o booleanos). Son útiles para almacenar y manipular conjuntos de datos, como una secuencia de colores o coordenadas.</p>
+                     <h2>Lists</h2>
+                     <p>Lists are ordered and mutable collections of elements of the same base type (numbers, strings, or booleans). They are useful for storing and manipulating sets of data, such as a sequence of colors or coordinates.</p>
 
                      <section id="list-declaration">
-                         <h3>Declaración e Inicialización</h3>
-                         <p>Se declaran usando la palabra clave <code>List</code>, seguida del tipo base de los elementos entre <code>&lt;&gt;</code> y un nombre identificador (el nombre de tu lista). Se pueden inicializar al mismo tiempo con un literal de lista.</p>
-                         <pre><code class="language-pixelwalle">List<int> myNumbers = [1, 5, 10, 20]; # Declara e inicializa una lista de enteros
-List<string> colors = ["red", "green", "blue", "#FF0000"]; # Declara e inicializa una lista de cadenas
-List<bool> emptyList = List<bool> []; # Declara e inicializa una lista de booleanos vacía
+                         <h3>Declaration and Initialization</h3>
+                         <p>They are declared using the keyword <code>List</code>, followed by the base type of the elements between <code>&lt;&gt;</code> and an identifier name (the name of your list). They can be initialized at the same time with a list literal.</p>
+                         <pre><code class="language-pixelwalle"> myNumbers <- List< int >[1, 5, 10, 20]; # Declares and initializes a list of integers
+colors <- List< string > ["red", "green", "blue", "#FF0000"]; # Declares and initializes a list of strings
+ emptyList <- List< bool > []; # Declares and initializes an empty list of booleans
 </code></pre>
-                         <p>Una vez declarada, puedes asignar una nueva lista del mismo tipo o el resultado de una expresión que devuelva una lista (si existen tales funciones).</p>
-                          <pre><code class="language-pixelwalle">myNumbers = [100, 200]; # Reemplaza el contenido de myNumbers
+                         <p>Once declared, you can assign a new list of the same type.</p>
+                          <pre><code class="language-pixelwalle">myNumbers <- [100, 200]; # Replaces the content of myNumbers
 </code></pre>
                      </section>
 
                      <section id="list-access">
-                         <h3>Acceso a Elementos</h3>
-                         <p>Se accede a los elementos individuales por su índice (posición) dentro de la lista, usando corchetes <code>[]</code> después del nombre de la lista. Los índices en pixelWallE, como en muchos lenguajes, comienzan desde 0 para el primer elemento.</p>
-                         <pre><code class="language-pixelwalle">firstNumber = myNumbers[0]; # firstNumber ahora vale 1 (o 100 si se reasignó antes)
-secondColor = colors[1]; # secondColor ahora vale "green"
-lastColor = colors[colors.Length - 1]; # Accede al último elemento usando Length
+                         <h3>Accessing Elements</h3>
+                         <p>Individual elements are accessed by their index (position) within the list, using square brackets <code>[]</code> after the list name. Indices in pixelWallE, like in many languages, start from 0 for the first element.</p>
+                         <pre><code class="language-pixelwalle">firstNumber = myNumbers[0]; # firstNumber now equals 1 (or 100 if reassigned before)
+secondColor = colors[1]; # secondColor now equals "green"
+lastColor = colors[colors.Length - 1]; # Accesses the last element using Length
 </code></pre>
-                        <p><em>Nota: Intentar acceder a un índice que no existe en la lista (un índice negativo o un índice mayor o igual que la longitud de la lista) generará un error de ejecución.</em></p>
+                        <p><em>Note: Attempting to access an index that does not exist in the list (a negative index or an index greater than or equal to the length of the list) will result in a runtime error.</em></p>
                      </section>
 
                      <section id="list-methods">
-                         <h3>Métodos de Lista</h3>
-                         <p>Las listas tienen métodos integrados (funciones asociadas a la lista) para manipular sus elementos. Se llaman usando un punto <code>.</code> después del nombre de la lista, seguido del nombre del método y paréntesis <code>()</code> si el método requiere argumentos.</p>
+                         <h3>List Methods</h3>
+                         <p>Lists have built-in methods (functions associated with the list) to manipulate their elements. They are called using a dot <code>.</code> after the list name, followed by the method name and parentheses <code>()</code> if the method requires arguments.</p>
                          <ul>
                              <li>
-                                 <p><strong><code>Add(item)</code>:</strong> Añade el <code>item</code> especificado al final de la lista. El tipo del <code>item</code> debe coincidir con el tipo base de la lista.</p>
-                                 <pre><code class="language-pixelwalle">myNumbers.Add(25); # myNumbers se convierte en [..., 25]
-colors.Add("yellow"); # colors se convierte en [..., "yellow"]
+                                 <p><strong><code>Add(item)</code>:</strong> Adds the specified <code>item</code> to the end of the list. The type of the <code>item</code> must match the base type of the list.</p>
+                                 <pre><code class="language-pixelwalle">myNumbers.Add(25); # myNumbers becomes [..., 25]
+colors.Add("yellow"); # colors becomes [..., "yellow"]
 </code></pre>
                              </li>
                               <li>
-                                 <p><strong><code>RemoveAt(index)</code>:</strong> Elimina el elemento en el <code>index</code> especificado. El índice debe ser un número válido dentro del rango de la lista.</p>
-                                 <pre><code class="language-pixelwalle">myNumbers.RemoveAt(1); # Elimina el segundo elemento
+                                 <p><strong><code>RemoveAt(index)</code>:</strong> Removes the element at the specified <code>index</code>. The index must be a valid number within the list's range.</p>
+                                 <pre><code class="language-pixelwalle">myNumbers.RemoveAt(1); # Removes the second element
 </code></pre>
-                                 <p><em>Nota: Eliminar un índice fuera de rango generará un error de ejecución.</em></p>
+                                 <p><em>Note: Removing an out-of-range index will result in a runtime error.</em></p>
                              </li>
                              <li>
-                                 <p><strong><code>Clear()</code>:</strong> Elimina todos los elementos de la lista, dejándola vacía.</p>
-                                 <pre><code class="language-pixelwalle">colors.Clear(); # colors ahora es una lista vacía []
+                                 <p><strong><code>Clear()</code>:</strong> Removes all elements from the list, leaving it empty.</p>
+                                 <pre><code class="language-pixelwalle">colors.Clear(); # colors is now an empty list []
 </code></pre>
                              </li>
                               <li>
-                                 <p><strong><code>Length</code>:</strong> (Es una propiedad, no un método, por lo que no lleva `()`) Devuelve el número de elementos en la lista como un número entero.</p>
-                                  <pre><code class="language-pixelwalle">numColors = colors.Length; # numColors contendrá el número actual de elementos en colors
+                                 <p><strong><code>Length</code>:</strong> (It is a property, not a method, so it does not take `()`) Returns the number of elements in the list as an integer.</p>
+                                  <pre><code class="language-pixelwalle">numColors = colors.Length; # numColors will contain the current number of elements in colors
 </code></pre>
-                                  <p>Se usa comúnmente para iterar sobre la lista o para verificar si está vacía.</p>
+                                  <p>It is commonly used to iterate over the list or to check if it is empty.</p>
                              </li>
                          </ul>
                      </section>
@@ -260,14 +266,14 @@ colors.Add("yellow"); # colors se convierte en [..., "yellow"]
     <footer>
         <div class="container">
             <p>© 2025 πxelStudioCode</p>
-            <!-- Enlace personal de GitHub, manteniendo el color del texto del footer -->
+            <!-- Personal GitHub link, maintaining the footer text color -->
             <p>Developed by <a href="https://github.com/FontesHabana" target="_blank">Javier Fontes Basabe</a>.</p>
-            <!-- Puedes añadir más info o enlaces aquí -->
+            <!-- You can add more info or links here -->
         </div>
     </footer>
 
-    <script src="/src/pages/script.js"></script> <!-- Enlaza tu archivo JavaScript -->
-    <!-- Script para destacar sintaxis en bloques de código si tienes uno -->
+    <script src="/src/pages/script.js"></script> <!-- Link your JavaScript file -->
+    <!-- Script for syntax highlighting in code blocks if you have one -->
     <!-- <script src="path/to/your/syntax-highlighter.js"></script> -->
 
 </body>
