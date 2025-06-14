@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark"> <!-- Default to dark mode -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>πxelStudioCode Language - Introduction</title> <!-- Updated Title -->
+    <link rel="icon" href="assets/Pixel.png" type="image/png">
+    <link rel="stylesheet" href="/src/styles/style.css"> <!-- General styles -->
+    <link rel="stylesheet" href="/src/styles/ideDocs.css"> <!-- Specific documentation styles (reused) -->
+    <!-- Link to Font Awesome for icons (most recent version if possible) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" xintegrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- You can link external fonts here if desired -->
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet"> -->
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <div class="logo">πxelStudioCode</div>
+            <nav>
+                 <!-- Hamburger Button (visible only on mobile/tablet) -->
+                <button id="mobile-menu-toggle" class="menu-toggle-button" aria-label="Toggle mobile menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+                 <!-- Utility Icons (visible everywhere, but moved on mobile) -->
+
+                <!-- Navigation Links (hidden on mobile, shown in menu) -->
+                <ul class="nav-links">
+                    <!-- Make sure these links point to the correct pages -->
+                    <li><a href="docs.html">IDE</a></li>
+                    <li><a href="examples.html">Examples</a></li> <!-- Assumes examples are in the screenshot section of index.html -->
+                    <li><a href="documentation.html" class="active">Language</a></li> <!-- Link to this page, marked as active -->
+                    <li><a href="documentaciónLenguaje.html" >ES</a></li>
+                    <div class="utility-icons">
+                    <a href="https://github.com/FontesHabana/Pixel_Wall-E" target="_blank" class="header-icon" aria-label="Go to project GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+
+                    <button id="theme-toggle" class="header-icon theme-toggle-button" aria-label="Toggle theme">
+                        <i class="fas fa-sun"></i> <!-- Sun icon by default, updated by JS to lightbulb -->
+                    </button>
+                </div>
+                </ul>
+
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="docs-container container">
+            <!-- Sidebar Navigation -->
+            <aside class="docs-sidebar">
+                <nav>
+                    <ul>
+                        <li><a href="#introduction" class="active">Introduction</a></li>
+                        <li><a href="#grammar-overview">Overview</a></li>
+                        <li><a href="expressions.html">Expressions and Lists</a></li>
+                        <li><a href="statements.html">Commands and Functions</a></li>
+                        <!-- Add more top-level language topics here if they get their own page -->
+                    </ul>
+                </nav>
+            </aside>
+
+            <!-- Main Language Documentation Content - Introduction -->
+            <article class="docs-content">
+
+                <section id="introduction">
+                    <h1>pixelWallE Language Documentation</h1>
+                    <p>Welcome to the documentation for the pixelWallE programming language. This language is specifically designed to create pixel art programmatically within the pixelWallE editor.</p>
+                    <p>The language is simple and direct, allowing you to define shapes, colors, and movements using clear and concise syntax. Its main focus is the visual manipulation of the canvas through specific commands.</p>
+                    <p>This page provides you with an overview of the language. To delve into the details of each component, navigate using the sidebar:</p>
+                     <ul>
+                         <li><a href="expressions.html"><strong>Expressions and Lists:</strong></a> Learn about data types (literals), how to combine them with operators to form expressions, and how to manage data collections using lists.</li>
+                         <li><a href="statements.html"><strong>Commands and Functions:</strong></a> Discover the instructions that tell pixelWallE what to draw or do on the canvas (commands) and how to get information about the current state of the editor or canvas (functions).</li>
+
+                          <li><strong>Comments:</strong> Create documentation and more accessible code for other developers using <pre><code class="language-pixelwalle">#This is a comment
+</code></pre></li>
+<li>  <a href="https://deepwiki.com/FontesHabana/PixelStudioCode"><img src="https://deepwiki.com/badge.svg" alt="Ask DeepWiki"></a></li>
+                     </ul>
+
+                   
+                </section>
+
+               
+                     
+                 </section>
+
+            </article>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2025 πxelStudioCode</p>
+            <!-- Personal GitHub link, maintaining the footer text color -->
+            <p>Developed by <a href="https://github.com/FontesHabana" target="_blank">Javier Fontes Basabe</a>.</p>
+            <!-- You can add more info or links here -->
+        </div>
+    </footer>
+
+    <script src="/src/pages/script.js"></script> <!-- Link your JavaScript file -->
+    <!-- Script for syntax highlighting in code blocks if you have one -->
+    <!-- <script src="path/to/your/syntax-highlighter.js"></script> -->
+
+</body>
+</html>

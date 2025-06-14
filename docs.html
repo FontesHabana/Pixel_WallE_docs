@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark"> <!-- Default to dark mode -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>πxelWallE Editor</title> <!-- Updated Title -->
+    <link rel="icon" href="assets/Pixel.png" type="image/png">
+    <link rel="stylesheet" href="/src/styles/style.css"> <!-- General styles -->
+    <link rel="stylesheet" href="/src/styles/ideDocs.css"> <!-- Specific documentation styles -->
+    <!-- Link to Font Awesome for icons (most recent version if possible) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" xintegrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- You can link external fonts here if desired -->
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet"> -->
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <div class="logo">πxelStudioCode</div>
+            <nav>
+                 <!-- Hamburger Button (visible only on mobile/tablet) -->
+                <button id="mobile-menu-toggle" class="menu-toggle-button" aria-label="Toggle mobile menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+                 <!-- Utility Icons (visible everywhere, but moved on mobile) -->
+
+                <!-- Navigation Links (hidden on mobile, shown in menu) -->
+                <ul class="nav-links">
+                    <li><a href="docs.html" class="active">IDE</a></li>
+                    <li><a href="examples.html">Examples</a></li>
+                    <li><a href="documentation.html" target="_blank">Language</a></li> <!-- Link to this page -->
+                    <li><a href="documentación.html" >ES</a></li>
+                    <div class="utility-icons">
+                    <a href="https://github.com/FontesHabana/Pixel_Wall-E" target="_blank" class="header-icon" aria-label="Go to project GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+
+                    <button id="theme-toggle" class="header-icon theme-toggle-button" aria-label="Toggle theme">
+                        <i class="fas fa-sun"></i> <!-- Sun icon by default, updated by JS to lightbulb -->
+                    </button>
+                </div>
+                </ul>
+
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="docs-container container">
+            <!-- Sidebar Navigation -->
+            <aside class="docs-sidebar">
+                <nav>
+                    <ul>
+                        <li><a href="#introduction">Introduction</a></li>
+                        <li><a href="#loading-saving">File Management</a></li>
+                        <li><a href="#photo-to-code">Import Photos to Code</a></li>
+                        <li><a href="#export-image">Export as Image</a></li>
+                        <li><a href="#console-usage">Integrated Console</a></li>
+                        <li><a href="#side-buttons">Quick Navigation: Side Buttons</a></li>
+                        <li><a href="#realtime-errors">Real-time Debugging</a></li>
+                        <!-- Add more sections here -->
+                    </ul>
+                </nav>
+            </aside>
+
+            <!-- Main Documentation Content -->
+            <article class="docs-content">
+
+                <section id="introduction">
+                    <h1>πxelStudioCode Editor Documentation:</h1>
+                    <p>Welcome to the essential guide for πxelWallE! Here you will find everything you need to master our innovative editor and bring your pixel art visions to life. We have designed this documentation to be as intuitive as our editor, allowing you to fully immerse yourself in creation without complications.</p>
+                    <p>From loading your projects to exporting your masterpieces and converting images into code, get ready for a pixel art creation experience like no other.</p>
+                </section>
+
+
+                <section id="loading-saving">
+                    <h2>File Management:</h2>
+                    <p>Your progress is invaluable. πxelWallE offers you clear and simple tools to load, save, and organize all your pixel art projects.</p>
+
+                    <h3>Open Existing Files: Pick up where you left off</h3>
+                    <p>To continue your creative adventure:</p>
+                    <ul>
+                        <li>Go to the <code>Files</code> menu in the top bar.</li>
+                        <li>Select <code>Load</code>.</li>
+                        <li>Find your <code>.pw</code> file (πxelWallE's native format) and click to open it.</li>
+                    </ul>
+                    <p>Your project will be ready to continue being transformed!</p>
+
+                    <h3>Create New Files:</h3>
+                    <p>To start from scratch and unleash new ideas:</p>
+                    <ul>
+                        <li>In the command console, type <code>new file</code>.</li>
+                    </ul>
+                    <p>A fresh and empty editor awaits you, ready for your first lines of pixel code.</p>
+
+                    <h3>Save Files: </h3>
+                    <p>Save your work frequently to secure every advance:</p>
+                    <ul>
+                        <li><strong>Save (<code>Ctrl + S</code> / <code>Cmd + S</code>):</strong> Updates your existing file with the latest changes.</li>
+                        <li>In <code>Files</code>, <code>Load</code> saves your project with a new name or in a different location, ideal for versions or backups.</li>
+                    </ul>
+
+                    <h3>Supported File Formats: .pw</h3>
+                    <p>πxelWallE uses the <code>.pw</code> format to store your pixel art code. Make sure to use it to save and load your creations!</p>
+
+                </section>
+
+                <section id="photo-to-code">
+                    <h2>Import Photos to Code: Transform Images into Programmable Creations</h2>
+                    <p>One of πxelWallE's most magical features! Convert any image (PNG, JPG) into pixelWallE code. It's the perfect way to explore programmable pixel art representation or start a new project from an existing visual base. Although its integration is under development, you can use it through the <code>transformIMG.py</code> script located next to the executable.</p>
+
+                    <h3>How It Works:</h3>
+                    <p>This tool analyzes the pixels of your image, interpreting their colors and positions to generate lines of code that, when executed, will recreate that image in the editor.</p>
+
+                    <h3>Steps for Conversion: From Image to Code</h3>
+                    <ol>
+                        <li>Run the <code>transformIMG</code> script.</li>
+                        <li>Copy the image path.</li>
+                        <li>Type the name of the folder where you will save the code.</li>
+                        <li>Press enter.</li>
+                    </ol>
+                    <p>Watch your image materialize into lines of code ready to edit!</p>
+
+                    <h3>The Generated Code: Your New Canvas</h3>
+                    <pre><code class="language-pixelwalle">Spawn(0,0)
+Color("#FF0000")
+DrawLine(0, 1,1);
+DrawLine(1, 0,1);
+# ... and so, pixel by pixel, your image takes shape in code ...
+</code></pre>
+                     <p>This code is your starting point. Modify it, experiment, and make it your own.</p>
+
+                    <h3>Considerations for Optimal Conversion</h3>
+                    <ul>
+                        <li>Simpler images or those with fewer colors tend to yield better results.</li>
+                        <li>Very large images can generate a lot of code; experiment with the output size.</li>
+                        <li>The result is a solid base, but you can always refine it manually.</li>
+                    </ul>
+
+                    <p><strong>Pro Tip:</strong> Play with size and palette settings to discover surprising visual effects. Images with defined outlines are your best allies!</p>
+                </section>
+
+                <section id="export-image">
+                    <h2>Export as Image:</h2>
+                    <p>Your pixel art is ready for the world. Export your creations to standard image formats like PNG to share them on networks, use them in your projects, or simply save them as digital works of art.</p>
+
+                    <h3>How to Export Your Art: From Code to Final Image</h3>
+                    <ol>
+                        <li>Make sure your pixel art preview is exactly how you want it.</li>
+                        <li>Go to the <code>Files</code> menu.</li>
+                        <li>Select <code>Save Picture</code>.</li>
+                        <li>Configure the export options:
+                            <ul>
+                                <li><strong>Image Format:</strong> PNG is ideal for pixel art due to its lossless quality and transparency support.</li>
+                                <li><strong>Save to:</strong> Choose the location and name of your file.</li>
+                            </ul>
+                        </li>
+                    </ol>
+                    <p>Done! Your pixel art is now in image format, ready to shine.</p>
+
+                    <p><strong>Pro Tip:</strong> For maximum sharpness and detail in pixel art, always export to PNG.</p>
+                </section>
+
+                <section id="console-usage">
+                    <h2>Integrated Console:</h2>
+                    <p>The πxelWallE console is your command center. Use it to execute code, debug errors instantly, and view the output of your programs, all in one place.</p>
+
+                    <h3>Accessing the Console: </h3>
+                    <p>The console is always visible at the bottom of the editor. You just have to select it and start typing.</p>
+
+                    <h3>Run and Observe:</h3>
+                    <p>Press the "Run" button or type <code>run</code> in the console. You will see the output of your code and any important messages instantly, facilitating debugging and tracking.</p>
+
+                    <h3>Useful Commands:</h3>
+                    <ul>
+                        <li><code>run file your_file.pxl</code>: Executes your pixel art script.</li>
+                        <li><code>clear console</code>: Clears the console for a fresh view.</li>
+                        <li><code>help</code>: Displays information for all console commands.</li>
+                        <li><code>show commands</code>: Shows all commands you can type in the code.</li>
+                    </ul>
+
+                    <p><strong>Remember:</strong> The complete syntax is available in the Console itself by typing the <code>help</code> command.</p>
+
+                   
+                </section>
+
+                 <section id="side-buttons">
+                    <h2>Quick Navigation:</h2>
+                    <p>Discover the visual shortcuts. The πxelWallE sidebar gives you instant access to the most used functions, making your creative process faster and uninterrupted.</p>
+
+                    <p>Get to know your new shortcuts:</p>
+
+                    <ul>
+                        <li>
+                            <p><strong>Resize Canvas:</strong> <i class="fas fa-expand-alt"></i> </i> Transform the size of your canvas for more versatility.</p>
+                        </li>
+                        <li>
+                            <p><strong>Undo:</strong> <i class="fas fa-undo"></i> Go back one step, perfect for experimenting without fear!</p>
+                        </li>
+                        <li>
+                            <p><strong>Redo:</strong> <i class="fas fa-redo"></i> Recover an undone action.</p>
+                        </li>
+                         <li>
+                            <p><strong>Clear Canvas:</strong> <i class="fas fa-trash"></i> Clears the current canvas, giving you a new canvas ready to experiment.</p>
+                        </li>
+                        <li>
+                            <p><strong>Execute Code:</strong> <i class="fas fa-play"></i> The magic button! Execute your code and watch your pixel art come to life.</p>
+                        </li>
+                    </ul>
+
+                    <p><strong>Pro Tip:</strong> Familiarize yourself with these buttons. They are your allies for maintaining a fluid workflow.</p>
+                </section>
+
+                 <section id="realtime-errors">
+                    <h2>Real-time Debugging: Errors, Under Control</h2>
+                    <p>πxelWallE actively assists you in correcting errors. It detects problems as you type, giving you immediate feedback so your code is perfect.</p>
+
+                    <h3>How πxelWallE Helps You: Clear Signals</h3>
+                    <ul>
+                        <li><strong>Intuitive Underlining:</strong> Parts of the code with errors are highlighted (red for errors), guiding you to the exact problem.</li>
+                        <li><strong>Detailed Messages (Tooltips):</strong> Hover over the underline for a clear explanation of the problem.</li>
+                        <li><strong>Console Errors:</strong> The console displays a list of all errors and warnings, allowing you to quickly navigate to each instance.</li>
+                    </ul>
+
+                    <h3>Types of Errors We Detect:</h3>
+                    <ul>
+                        <li><strong>Lexer Errors:</strong> Problems with invalid characters.</li>
+                        <li><strong>Syntax Errors:</strong> Problems with language structure (e.g., a forgotten parenthesis).</li>
+                        <li><strong>Basic Semantic Errors:</strong> When the code makes no logical sense (e.g., an invalid color).</li>
+                    </ul>
+
+                    <h3>Interpreting Messages: Your Guide to Troubleshooting</h3>
+                    <p>Each message will tell you: the type of problem (Error or Warning), a clear description, and the exact location (line and column).</p>
+
+                    <p><strong>Tips for Effective Debugging:</strong></p>
+                    <ul>
+                        <li>**Read Carefully:** The error message is your best clue.</li>
+                        <li>**Start from the Beginning:** An early error can cause many later problems.</li>
+                        <li>**Check Around:** Sometimes, the real problem is in a nearby line.</li>
+                        <li>**Consult the Documentation:** Always have the <a href="lenguaje/documentación.html" target="_blank">pixelWallE Language Documentation</a> handy to verify syntax.</li>
+                    </ul>
+
+                    <p><strong>Pro Tip:</strong> Errors are learning opportunities! πxelWallE turns them into steps to improve your code.</p>
+                </section>
+
+                
+
+            </article>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2025 πxelStudioCode</p>
+            <!-- Personal GitHub link, maintaining the footer text color -->
+            <p>Developed by <a href="https://github.com/FontesHabana" target="_blank">Javier Fontes Basabe</a>.</p>
+            <!-- You can add more info or links here -->
+        </div>
+    </footer>
+
+    <script src="/src/pages/script.js"></script> <!-- Link your JavaScript file -->
+
+</body>
+</html>
