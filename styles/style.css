@@ -594,6 +594,9 @@ footer a:hover {
     max-width: 70%;
 }
 .screenshot img {
+    max-width: 50%;
+}
+#examples-gallery img{
     max-width: 70%;
 }
 
