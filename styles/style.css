@@ -593,6 +593,9 @@ footer a:hover {
     .container img{
     max-width: 70%;
 }
+.screenshot img {
+    max-width: 70%;
+}
 
      /* Show the burger button in mobile */
     .menu-toggle-button {
