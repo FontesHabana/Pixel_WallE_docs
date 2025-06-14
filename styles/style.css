@@ -590,6 +590,9 @@ footer a:hover {
         border-bottom: none; /* Remove underline in mobile nav */
         color: var(--accent-color); /* Keep accent color */
     }
+    .container img{
+    max-width: 70%;
+}
 
      /* Show the burger button in mobile */
     .menu-toggle-button {
